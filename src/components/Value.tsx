@@ -10,21 +10,21 @@ export default function Value() {
  const cards = [
     {
       default: '/S.svg',
-      hover: '/solve.svg',
+      hover: '/Solve.svg',
       alt: 'S',
       defaultSize: { width: 100, height: 160 },
       hoverSize: { width: 300, height: 360 },
     },
     {
       default: '/L.svg',
-      hover: '/learn.svg',
+      hover: '/Learn.svg',
       alt: 'L',
       defaultSize: { width: 100, height: 160 },
       hoverSize: { width: 300, height: 360 },
     },
     {
       default: '/E.svg',
-      hover: '/evolve.svg',
+      hover: '/Evolve.svg',
       alt: 'E',
       defaultSize: { width: 100, height: 160 },
       hoverSize: { width: 300, height: 360 },

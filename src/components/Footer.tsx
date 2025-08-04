@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.left}>
         <div className={styles.mix}>
-            <Image src="/logo.svg" alt="SLE 로고" width={80} height={30} />
+            <Image src="/Logo.svg" alt="SLE 로고" width={80} height={30} />
             <div className={styles.right}>
                 <Link href="/about">About</Link>
                 <Link href="/archive">Archive</Link>

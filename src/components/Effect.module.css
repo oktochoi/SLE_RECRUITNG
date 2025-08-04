@@ -1,0 +1,29 @@
+.tickerWrap {
+  width: 100%;
+  overflow: hidden;
+  background-color: black;
+  color: white;
+  white-space: nowrap;
+}
+
+.ticker {
+  display: inline-block;
+  animation: scroll-left 20s linear infinite;
+}
+
+.ticker span {
+  display: inline-block;
+  padding: 0 40px;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

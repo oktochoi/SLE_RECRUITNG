@@ -1,0 +1,57 @@
+.section {
+  padding: 100px 20px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.title {
+  color: var(--White, #FFF);
+  font-family: "Noto Sans KR";
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: -0.56px;
+  margin-bottom: 60px;
+}
+
+/* ✅ 전체를 감싸는 row (슬기롭게 + 텍스트) */
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+/* ✅ 이미지 공통 */
+.aboutImageWrapper {
+  position: relative;
+
+}
+
+.aboutImage {
+  object-fit: contain;
+}
+
+/* 아래 뱀 이미지 */
+.about2Wrapper {
+  position: relative;
+  margin: 40px 0 60px 930px;
+}
+
+.about3Wrapper {
+  position: relative;
+  margin: 0 100px 0 200px;
+}
+
+.textBox {
+  color: var(--Gray-01, #A1A1A1);
+  font-family: "Noto Sans KR";
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 190%;
+  letter-spacing: -0.36px;
+  text-align: left;
+}

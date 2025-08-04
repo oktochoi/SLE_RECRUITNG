@@ -1,0 +1,60 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* ✅ 최소 화면 채우되, 내용 많으면 늘어나게 */
+  overflow: hidden;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.gradientOverlay {
+  position: absolute;
+  bottom: 0;                 /* ✅ 아래쪽 기준으로 */
+  left: 0;
+  width: 100%;
+  height: 20%;               /* ✅ 전체의 20%만큼 높이 */
+  background: linear-gradient(
+    180deg,
+    rgba(6, 6, 6, 0.00) 0%,
+    rgba(114, 191, 107, 0.10) 100%
+  );
+  z-index: 1;
+}
+
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 430px 20px 200px; /* ✅ 위아래 여백 충분히 주기 */
+  text-align: center;
+  color: white;
+}
+
+.titleImage {
+  width: 400px;
+  height: auto;
+  margin-bottom: 42px;
+}
+
+.description {
+    color: var(--Gray-01, #A1A1A1);
+    text-align: center;
+    font-family: "Noto Sans KR";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 170%; /* 34px */
+    letter-spacing: -0.4px;
+}

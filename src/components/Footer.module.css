@@ -1,0 +1,50 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #111;
+  color: #aaa;
+  padding: 40px;
+  font-size: 14px;
+}
+.mix {
+  display: flex;
+  width: 100%;             /* 필수: 내부 공간 확보 */
+  justify-content: space-between; /* 또는 margin-left 방식으로 대체 */
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.icons {
+  display: flex;
+  gap: 12px;
+}
+
+.right {
+  padding-left: 1500px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: flex-end;
+  color: var(--Gray-02, #5A5A5A);
+    text-align: center;
+    font-family: "Noto Sans KR";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 20.8px */
+    letter-spacing: -0.32px;
+}
+
+.right a {
+  color: #888;
+  text-decoration: none;
+}
+
+.right a:hover {
+  color: white;
+}

@@ -1,0 +1,40 @@
+.section {
+  padding: 100px 20px;
+  background-color: black;
+  text-align: center;
+}
+
+.title{
+    color: var(--White, #FFF);
+    text-align: center;
+    font-family: "Noto Sans KR";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%; /* 36.4px */
+    letter-spacing: -0.56px;
+}
+
+.headerImages {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.cardGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 64px;
+  margin-bottom: 60px;
+}
+
+.footerButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.clickable {
+  cursor: pointer;
+}

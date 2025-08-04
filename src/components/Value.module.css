@@ -1,0 +1,83 @@
+.section {
+  padding: 80px 0;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.section {
+  padding: 100px 20px 80px;
+  background-color: black;
+  text-align: center;
+  color: white;
+}
+
+.title {
+    color: var(--White, #FFF);
+    text-align: center;
+    font-family: "Noto Sans KR";
+    font-size: 28px;
+    padding-bottom: 120px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%; /* 36.4px */
+    letter-spacing: -0.56px;
+}
+
+.cardGrid {
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 300px;
+  height: 360px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: var(--Gray-04, #0F0F0F);
+
+  /* ✅ 이미지 가운데 정렬을 위한 추가 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* ✅ 부드러운 호버 효과 */
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+
+.title {
+    color: var(--White, #FFF);
+    text-align: center;
+    font-family: "Noto Sans KR";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%; /* 36.4px */
+    letter-spacing: -0.56px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
+  justify-items: center;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.textBox {
+  max-width: 400px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #aaa;
+  text-align: left;
+}

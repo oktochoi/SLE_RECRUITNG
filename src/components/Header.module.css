@@ -1,0 +1,51 @@
+.header {
+  position:fixed;
+  width: 100%;
+  height: 64px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 28px;
+  padding-left: 120px;
+  padding-right: 120px;
+}
+
+.logoContainer {
+    display: flex;
+    width: 64px;
+    height: 24px;
+    padding-right: 0.143px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+  cursor: pointer;
+}
+
+.logoText {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.navbar {
+  display: flex;
+  gap: 24px;
+  font-size: 14px;
+}
+
+.menuItem {
+  width: 56px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
+}
+
+.menuText {
+    display: flex;
+    width: 32px;
+    height: 24px;
+    padding: 1px 0 2px 0;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}

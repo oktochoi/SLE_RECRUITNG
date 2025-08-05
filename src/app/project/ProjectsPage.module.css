@@ -71,10 +71,10 @@
 }
 
 .imageWrapper {
+  width: 100%;               /* 부모(grid cell)에 맞게 채움 */
+  aspect-ratio: 1 / 1;       /* 정사각형 비율 유지 */
   overflow: hidden;
   border-radius: 0.5rem;
-  width: 380px;
-  height: 380px;
 }
 
 .image {

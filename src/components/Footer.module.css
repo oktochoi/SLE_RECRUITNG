@@ -1,43 +1,38 @@
 .footer {
-  display: flex;
-  justify-content: space-between;
+  width: 100%;
   background-color: #111;
   color: #aaa;
-  padding: 40px;
+  padding: 40px 6vw;
   font-size: 14px;
-}
-.mix {
   display: flex;
-  width: 100%;             /* 필수: 내부 공간 확보 */
-  justify-content: space-between; /* 또는 margin-left 방식으로 대체 */
-  align-items: center;
+  justify-content: center; /* 중앙 배치 */
 }
 
 .left {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 100%;
+  max-width: 1600px; /* 선택 사항: 너무 넓어지지 않게 제한 */
 }
 
-.icons {
+.mix {
   display: flex;
-  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* 화면 작아지면 아래로 쌓이게 */
 }
 
 .right {
-  padding-left: 1500px;
   display: flex;
-  flex-direction: row;
-  gap: 8px;
-  align-items: flex-end;
+  gap: 16px;
+  align-items: center;
   color: var(--Gray-02, #5A5A5A);
-    text-align: center;
-    font-family: "Noto Sans KR";
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 130%; /* 20.8px */
-    letter-spacing: -0.32px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: -0.32px;
 }
 
 .right a {
@@ -47,4 +42,9 @@
 
 .right a:hover {
   color: white;
+}
+
+.icons {
+  display: flex;
+  gap: 12px;
 }

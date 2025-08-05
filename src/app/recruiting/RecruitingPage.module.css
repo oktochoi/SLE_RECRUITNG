@@ -21,36 +21,24 @@
   padding: 20px;
 }
 
-.title {
-    text-align: center;
-    font-family: "Noto Sans KR";
-    font-size: 68px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 130%; /* 88.4px */
-    letter-spacing: -1.36px;
-    background: linear-gradient(91deg, #B8FFB2 0.27%, #72BF6B 99.53%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.subtitle {
-    text-align: center;
-    font-family: "Noto Sans KR";
-    font-size: 68px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 130%; /* 88.4px */
-    letter-spacing: -1.36px;
-    background: linear-gradient(91deg, #B8FFB2 0.27%, #72BF6B 99.53%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.title, .subtitle {
+  text-align: center;
+  font-family: "Noto Sans KR";
+  font-size: 68px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: -1.36px;
+  background: linear-gradient(91deg, #B8FFB2 0.27%, #72BF6B 99.53%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  word-break: keep-all;
 }
 
 .days {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   font-size: 32px;
@@ -58,23 +46,61 @@
   margin-bottom: 24px;
   gap: 10px;
   color: black;
+  text-align: center;
 }
 
 .box {
-        width: 72px;
-    height: 72px;
-    flex-shrink: 0;
-    border-radius: 12px;
-    background: var(--Primary-01, #72BF6B);
-    color: var(--Gray-05, #060606);
-    text-align: center;
-    font-family: "Noto Sans KR";
-    font-size: 52px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 130%; /* 67.6px */
-    letter-spacing: -1.04px;
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: var(--Primary-01, #72BF6B);
+  color: var(--Gray-05, #060606);
+  text-align: center;
+  font-family: "Noto Sans KR";
+  font-size: 52px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: -1.04px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+/* ✅ 반응형 대응 */
+@media screen and (max-width: 1024px) {
+  .title, .subtitle {
+    font-size: 48px;
+  }
+
+  .box {
+    width: 56px;
+    height: 56px;
+    font-size: 40px;
+  }
+
+  .days {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .title, .subtitle {
+    font-size: 36px;
+  }
+
+  .box {
+    width: 48px;
+    height: 48px;
+    font-size: 32px;
+  }
+
+  .days {
+    font-size: 20px;
+  }
+}
+
 
 .buttonWrapper {
   display: flex;

@@ -1,16 +1,16 @@
 .header {
-  position:fixed;
+  position: fixed;
+  top: 0;
   width: 100%;
   height: 64px;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 28px;
-  padding-left: 120px;
-  padding-right: 120px;
-  z-index: 50;  
+  padding: 0 6vw; /* <- 좌우 여백만 %로 줘서 반응형 느낌 */
+  z-index: 50;
 }
+
 
 .logoContainer {
     display: flex;

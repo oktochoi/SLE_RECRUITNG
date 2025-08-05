@@ -121,6 +121,32 @@
     padding-bottom: 30px;
 
 }
+@media screen and (max-width: 1024px) {
+  .bottomTitle {
+    font-size: 48px;
+  }
+
+  .bottomText {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .bottomTitle {
+    font-size: 32px;
+    letter-spacing: -0.8px;
+  }
+
+  .bottomText {
+    font-size: 16px;
+    line-height: 160%;
+  }
+
+  .button {
+    width: 240px;
+  }
+}
+
 
 .button {
   display: inline-block;

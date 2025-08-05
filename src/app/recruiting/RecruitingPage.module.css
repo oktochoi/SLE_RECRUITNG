@@ -1,0 +1,106 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 880px;
+  overflow: hidden;
+}
+
+.background {
+  object-fit: cover;
+  z-index: 0;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 10;
+  padding: 20px;
+}
+
+.title {
+    text-align: center;
+    font-family: "Noto Sans KR";
+    font-size: 68px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%; /* 88.4px */
+    letter-spacing: -1.36px;
+    background: linear-gradient(91deg, #B8FFB2 0.27%, #72BF6B 99.53%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    text-align: center;
+    font-family: "Noto Sans KR";
+    font-size: 68px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%; /* 88.4px */
+    letter-spacing: -1.36px;
+    background: linear-gradient(91deg, #B8FFB2 0.27%, #72BF6B 99.53%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.days {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  gap: 10px;
+  color: black;
+}
+
+.box {
+        width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: var(--Primary-01, #72BF6B);
+    color: var(--Gray-05, #060606);
+    text-align: center;
+    font-family: "Noto Sans KR";
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%; /* 67.6px */
+    letter-spacing: -1.04px;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 120px;
+}
+
+
+.button {
+  transition: transform 0.3s ease;
+}
+
+.button:hover {
+  transform: scale(1.05);
+}
+
+.centerImageWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.centerImage {
+  max-width: 100%;
+  height: auto;
+}

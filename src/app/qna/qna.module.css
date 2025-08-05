@@ -1,0 +1,216 @@
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background-color: black;
+  color: white;
+  padding: 5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  color: var(--White, #FFF);
+  text-align: center;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 68px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: -1.36px;
+  padding-bottom: 20px;
+}
+
+.subtitle {
+  color: var(--Gray-01, #A1A1A1);
+  text-align: center;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  padding-bottom: 30px;
+  font-weight: 400;
+  line-height: 170%;
+  letter-spacing: -0.4px;
+}
+
+.accordionList {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 5rem;
+}
+.accordionItem {
+    padding: 37px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 16px;
+    background: var(--Gray-04, #0F0F0F);
+    color: var(--White, #FFF);
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: -0.4px;
+    transition: all 0.3s ease;
+}
+
+.accordionButton {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+}
+
+.accordionButton:focus {
+  outline: none;
+}
+
+.icon {
+  transition: transform 0.3s ease;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+
+.accordionItem.open .answer {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+.bottomBox {
+  text-align: center;
+}
+
+.bottomTitle {
+  color: var(--White, #FFF);
+  text-align: center;
+  font-family: "Noto Sans KR";
+  font-size: 68px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%; /* 88.4px */
+  letter-spacing: -1.36px;
+  padding-bottom: 10px;
+}
+
+.bottomText {
+  padding-top: 30px;
+  color: var(--Gray-01, #A1A1A1);
+  text-align: center;
+  font-family: "Noto Sans KR";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 170%; /* 40.8px */
+  letter-spacing: -0.48px;
+    padding-bottom: 30px;
+
+}
+
+.button {
+  display: inline-block;
+  background-color: #72BF6B;
+  color: #060606;
+  font-weight: bold;
+  padding: 0.75rem 2rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #5cae55;
+  transition: background-color 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+}
+
+.accordionItem {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background-color: #0F0F0F;
+  color: white;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.accordionButton {
+  all: unset;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.accordionButton::before {
+  content: "Q.";
+  font-weight: bold;
+  margin-right: 0.5rem;
+  color: white;
+}
+
+.answer {
+  color: var(--White, #FFF);
+  font-family: "Noto Sans KR";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 32px */
+  letter-spacing: -0.4px;
+}
+
+.answer > p::before {
+  content: "A. ";
+  color: var(--Primary-01, #72BF6B);
+  font-family: "Noto Sans KR";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 32px */
+  letter-spacing: 3px;
+}
+
+details[open] .answer {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+

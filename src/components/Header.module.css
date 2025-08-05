@@ -7,7 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 6vw; /* <- 좌우 여백만 %로 줘서 반응형 느낌 */
+  padding: 0 3vw; /* <- 좌우 여백만 %로 줘서 반응형 느낌 */
   z-index: 50;
 }
 
@@ -44,7 +44,7 @@
 /* 모바일 이하일 때 더 줄이기 */
 @media screen and (max-width: 640px) {
   .navbar {
-    gap: 8px;
+    gap: 4px;
   }
 }
 

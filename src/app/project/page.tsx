@@ -14,7 +14,7 @@ export interface Project {
   link?: string;
 }
 
-export const projects: Project[] = [
+const projects: Project[] = [
   {
     id: 1,
     image: "/1.jpg",

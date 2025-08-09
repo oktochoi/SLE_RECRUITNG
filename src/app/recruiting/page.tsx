@@ -42,7 +42,7 @@ export default function RecruitingPage() {
             </div>
 
             <div className={styles.buttonWrapper}>
-              <Link href="https://your-google-form-link" target="_blank">
+              <Link href="https://docs.google.com/forms/d/e/1FAIpQLSc9EIMukZhMV2DV7ANwW4zCvJK5Al0mkPrmvRaWNl11U7fPmg/viewform?usp=header" target="_blank">
                 <Image
                   src="/rc2.svg"
                   alt="지금 지원하기"

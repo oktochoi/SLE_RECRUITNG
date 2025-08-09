@@ -20,26 +20,26 @@ export default function Projects() {
         <Image
           src="/project2.svg"
           alt="프로젝트 3"
-          width={380}
-          height={380}
+          width={340}
+          height={340}
         />
         <Image
           src="/project3.svg"
           alt="프로젝트 4"
-          width={380}
-          height={380}
+          width={340}
+          height={340}
         />
         <Image
           src="/project4.svg"
           alt="프로젝트 5"
-          width={380}
-          height={380}
+          width={340}
+          height={340}
         />
         <Image
           src="/project5.svg"
           alt="프로젝트 5"
-          width={380}
-          height={380}
+          width={340}
+          height={340}
         />
       </div>
 

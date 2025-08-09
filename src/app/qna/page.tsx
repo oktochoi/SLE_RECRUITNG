@@ -65,10 +65,10 @@ export default function QAPage() {
             아래 노션 링크에 편하게 남겨주세요.
           </p>
           <div className={styles.buttonWrapper}>
-            <Link href="https://your-google-form-link" target="_blank">
+            <Link href="https://open.kakao.com/o/gzqGyCLh" target="_blank">
               <Image
-                src="/rc2.svg"
-                alt="지금 지원하기"
+                src="/mu.svg"
+                alt="질문방"
                 width={280}
                 height={88}
                 className={styles.button}

@@ -8,7 +8,7 @@ export default function Recruiting() {
   return (
     <div className={styles.container}>
       <Image src="/Recruit.svg" alt="type" width={1920} height={40} />
-      <Link href="/recruiting">
+      <Link href="https://docs.google.com/forms/d/e/1FAIpQLSc9EIMukZhMV2DV7ANwW4zCvJK5Al0mkPrmvRaWNl11U7fPmg/viewform?usp=header">
             <Image src="/Recruit2.svg" alt="button" width={280} height={88} />
       </Link>
     </div>

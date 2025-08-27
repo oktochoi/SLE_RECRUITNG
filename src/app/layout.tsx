@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: "슬기짜기 SLE — 한동대 컴퓨터공학 동아리",
     description:
       "한동대 슬기짜기: 스터디/프로젝트/리크루팅 안내와 활동 기록을 제공합니다.",
-    images: [{ url: "/og.png" }], // public/og.png 준비
+    images: [{ url: "/og.png" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -28,17 +28,18 @@ export const metadata: Metadata = {
       "한동대 슬기짜기: 스터디/프로젝트/리크루팅 안내와 활동 기록.",
     images: ["/og.png"],
   },
+  // 👇 여기 올바른 방식
+  other: {
+    "google-site-verification":
+      "YrFVpwTroZcBOViMy1ObZlk5VZk7e3fMage4cRHmpac",
+  },
   icons: { icon: "/favicon.ico" },
-  // Search Console 소유권 확인을 바로 하려면 아래 주석 해제 후 content 값 교체
-  // other: { "google-site-verification": "여기에_검증코드" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko">
-      <body className="min-h-dvh">
-        {children}
-      </body>
+      <body className="min-h-dvh">{children}</body>
     </html>
   );
 }

@@ -30,8 +30,9 @@ export const metadata: Metadata = {
   },
   // 👇 여기 올바른 방식fd
   other: {
+    // ✅ 구글 사이트 인증 메타태그 추가
     "google-site-verification":
-      "YrFVpwTroZcBOViMy1ObZlk5VZk7e3fMage4cRHmpac",
+      "iZ95LzEUrPV707zcy_yLqOHN07C_Xo5XDfHyWr4Y9q0",
   },
   icons: { icon: "/favicon.ico" },
 };

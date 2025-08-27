@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       "한동대 슬기짜기: 스터디/프로젝트/리크루팅 안내와 활동 기록.",
     images: ["/og.png"],
   },
-  // 👇 여기 올바른 방식
+  // 👇 여기 올바른 방식fd
   other: {
     "google-site-verification":
       "YrFVpwTroZcBOViMy1ObZlk5VZk7e3fMage4cRHmpac",

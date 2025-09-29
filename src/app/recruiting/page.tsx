@@ -31,14 +31,16 @@ export default function RecruitingPage() {
         />
 
           <div className={styles.content}>
+            <h2 className={styles.title}>현재는 지원을 받고 있지 않습니다.</h2>
+            {/* 
             <h2 className={styles.title}>슬기짜기 리쿠르팅</h2>
 
-            {/* 지원 마감까지 22일 */}
             <div className={styles.days}>
               <span className={styles.subtitle}>지원 마감까지&nbsp;</span>
-              <span className={styles.box}>{firstDigit}</span>
-              <span className={styles.box}>{secondDigit}</span>
+              <span className={styles.box}>0</span>
+              <span className={styles.box}>0</span>
               <span className={styles.subtitle}>일</span>
+            */}
             </div>
 
             <div className={styles.buttonWrapper}>
@@ -71,7 +73,7 @@ export default function RecruitingPage() {
 
 
           <div className={styles.buttonWrapper}>
-            <Link href="https://your-google-form-link" target="_blank">
+            <Link href="https://slegizzagi.vercel.app/" target="_blank">
               <Image
                 src="/rc2.svg"
                 alt="지금 지원하기"

@@ -36,11 +36,19 @@
 }
 
 .cardGrid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 64px;
-  margin-bottom: 60px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  max-width: 1600px;
+  margin: 0 auto 60px;
+  justify-items: center;
+}
+
+.cardGrid img {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  object-fit: contain;
 }
 
 .footerButton {
@@ -51,4 +59,18 @@
 
 .clickable {
   cursor: pointer;
+}
+
+@media screen and (max-width: 1400px) {
+  .cardGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cardGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
 }

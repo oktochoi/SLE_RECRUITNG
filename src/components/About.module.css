@@ -6,52 +6,41 @@
   position: relative;
 }
 
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .title {
   color: var(--White, #FFF);
   font-family: "Noto Sans KR";
-  font-size: 28px;
+  font-size: 48px;
   font-weight: 700;
   line-height: 130%;
-  letter-spacing: -0.56px;
-  margin-bottom: 60px;
+  letter-spacing: -0.96px;
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, #ffffff 0%, #72BF6B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* ✅ 전체를 감싸는 row (슬기롭게 + 텍스트) */
-.row {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 60px;
-  margin-bottom: 60px;
-}
-
-/* ✅ 이미지 공통 */
-.aboutImageWrapper {
-  position: relative;
-
-}
-
-.aboutImage {
-  object-fit: contain;
-}
-
-/* 아래 뱀 이미지 */
-.about2Wrapper {
-  position: relative;
-  margin: 40px 0 60px 930px;
-}
-
-.about3Wrapper {
-  position: relative;
-  margin: 0 100px 0 200px;
-}
-
-.textBox {
+.description {
   color: var(--Gray-01, #A1A1A1);
   font-family: "Noto Sans KR";
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 400;
-  line-height: 190%;
-  letter-spacing: -0.36px;
-  text-align: left;
+  line-height: 180%;
+  letter-spacing: -0.4px;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 36px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
 }

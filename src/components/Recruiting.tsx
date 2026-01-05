@@ -1,15 +1,17 @@
 'use client';
 
-import Image from 'next/image';
 import styles from './Recruiting.module.css';
 import Link from 'next/link';
 
 export default function Recruiting() {
   return (
     <div className={styles.container}>
-      <Image src="/Recruit.svg" alt="type" width={1920} height={40} />
-      <Link href="https://docs.google.com/forms/d/e/1FAIpQLSc9EIMukZhMV2DV7ANwW4zCvJK5Al0mkPrmvRaWNl11U7fPmg/viewform?usp=header">
-            <Image src="/Recruit2.svg" alt="button" width={280} height={88} />
+      <h2 className={styles.title}>RECRUITING</h2>
+      <Link 
+        href="https://docs.google.com/forms/d/e/1FAIpQLSc9EIMukZhMV2DV7ANwW4zCvJK5Al0mkPrmvRaWNl11U7fPmg/viewform?usp=header"
+        className={styles.applyButton}
+      >
+        지금 지원하기
       </Link>
     </div>
   );

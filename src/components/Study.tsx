@@ -56,6 +56,9 @@ export default function StudySection() {
               width={2000}
               height={260}
               className={styles.sliderImage}
+              style={{ width: 'auto', height: 'auto', maxHeight: '260px' }}
+              priority
+              unoptimized
             />
             <Image
               src="/meeting.jpg"
@@ -92,6 +95,8 @@ export default function StudySection() {
               width={2000}
               height={260}
               className={styles.sliderImage}
+              style={{ width: 'auto', height: 'auto', maxHeight: '260px' }}
+              unoptimized
             />
             <Image
               src="/meeting.jpg"

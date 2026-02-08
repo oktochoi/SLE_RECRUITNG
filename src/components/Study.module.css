@@ -174,25 +174,37 @@
   width: 100%;
   overflow: hidden;
   position: relative;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
 }
 
 .sliderTrack {
   display: flex;
-  width: calc(2000px * 2 + 400px * 4 + 20px * 4); /* study2.svg 2개 + 사진 4개 + gap */
+  align-items: stretch;
+  width: calc(2000px * 2 + 400px * 4); /* study2.svg 2개 + 사진 4개, 여백 없음 */
   animation: scroll 30s linear infinite;
 }
 
 .sliderImage {
   flex-shrink: 0;
+  display: block;
 }
 
-.sliderImage[src*=".jpg"] {
+/* Next/Image는 className을 span에 주므로, 내부 img를 직접 선택 */
+.sliderTrack img[src*=".svg"] {
+  height: 260px;
+  width: auto;
+  display: block;
+  margin: 0;
+}
+
+.sliderTrack img[src*=".jpg"] {
   width: 400px;
   height: 300px;
   object-fit: cover;
-  border-radius: 16px;
-  border: 1px solid rgba(114, 191, 107, 0.2);
-  margin: 0 10px;
+  display: block;
+  margin: 0;
 }
 
 @keyframes scroll {
@@ -200,7 +212,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-2000px - 400px * 2 - 20px * 2)); /* study2.svg 1개 + 사진 2개 + gap만큼 이동 */
+    transform: translateX(calc(-2000px - 400px * 2)); /* study2.svg 1개 + 사진 2개만큼 이동 */
   }
 }
 

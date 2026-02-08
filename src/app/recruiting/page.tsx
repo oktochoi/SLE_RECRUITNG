@@ -8,33 +8,34 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function RecruitingPage() {
-  // 🎯 마감일 지정 (YYYY-MM-DD 형식)
-  const deadline = new Date("2025-08-27");
+  // 🎯 마감일: 3월 11일 (지원 마감)
+  const deadline = new Date("2026-03-11");
   const today = new Date();
 
-  // 🔄 남은 날짜 계산 (올림 처리)
-  const remainingDays = Math.ceil((deadline.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
+  // 🔄 남은 날짜 계산 (올림 처리, 마감 후에는 0)
+  const remainingDays = Math.max(0, Math.ceil((deadline.getTime() - today.getTime()) / (1000 * 60 * 60 * 24)));
 
-  // 숫 두 자리로 자르기
-  const firstDigit = Math.floor(remainingDays / 10);
-  const secondDigit = remainingDays % 10;
+  // 숫자 두 자리로 자르기 (표시용, 99일 초과 시 99로 표시)
+  const displayDays = Math.min(remainingDays, 99);
+  const firstDigit = Math.floor(displayDays / 10);
+  const secondDigit = displayDays % 10;
 
   const timelineItems = [
     {
-      date: "08/31(일) - 09/10(수)",
-      title: "1차 서류 모집"
+      date: "02/23(월) - 03/11(수)",
+      title: "서류 모집"
     },
     {
-      date: "09/11(목)",
-      title: "1차 서류 합격 결과 발표"
+      date: "03/11(수)",
+      title: "서류 합격 결과 발표"
     },
     {
-      date: "09/12(금) - 09/14(일)",
+      date: "03/12(목) - 03/15(토)",
       title: "대면 면접"
     },
     {
-      date: "09/15(월)",
-      title: "2차 최종 합격 결과 발표"
+      date: "03/16(일)",
+      title: "최종 합격 결과 발표"
     }
   ];
 
@@ -78,20 +79,18 @@ export default function RecruitingPage() {
         <div className={styles.backgroundGradient}></div>
 
         <div className={styles.content}>
-          <h2 className={styles.title}>현재는 지원을 받고 있지 않습니다.</h2>
-          {/* 
+          {/* <h2 className={styles.title}>현재는 지원을 받고 있지 않습니다.</h2>*/}
           <h2 className={styles.title}>슬기짜기 리쿠르팅</h2>
 
           <div className={styles.days}>
             <span className={styles.subtitle}>지원 마감까지&nbsp;</span>
-            <span className={styles.box}>0</span>
-            <span className={styles.box}>0</span>
+            <span className={styles.box}>{firstDigit}</span>
+            <span className={styles.box}>{secondDigit}</span>
             <span className={styles.subtitle}>일</span>
           </div>
-          */}
 
           <div className={styles.buttonWrapper}>
-            <Link href="https://docs.google.com/forms/d/e/1FAIpQLSc9EIMukZhMV2DV7ANwW4zCvJK5Al0mkPrmvRaWNl11U7fPmg/viewform?usp=header" target="_blank">
+            <Link href="https://docs.google.com/forms/d/e/1FAIpQLSdlDESVuVbGKyD5_qKnBzhK8FgwcuNAkSsoUgstiv62Qostpg/viewform?usp=dialog" target="_blank">
               <Image
                 src="/rc2.svg"
                 alt="지금 지원하기"
@@ -188,7 +187,7 @@ export default function RecruitingPage() {
 
         {/* 지원하기 버튼 */}
         <div className={styles.buttonWrapper}>
-          <Link href="https://docs.google.com/forms/d/e/1FAIpQLSc9EIMukZhMV2DV7ANwW4zCvJK5Al0mkPrmvRaWNl11U7fPmg/viewform?usp=header" target="_blank" className={styles.applyButton}>
+          <Link href="https://docs.google.com/forms/d/e/1FAIpQLSdlDESVuVbGKyD5_qKnBzhK8FgwcuNAkSsoUgstiv62Qostpg/viewform?usp=dialog" target="_blank" className={styles.applyButton}>
             <span className={styles.applyButtonText}>지금 지원하기</span>
             <span className={styles.applyButtonSubtext}>구글 폼으로 이동</span>
           </Link>

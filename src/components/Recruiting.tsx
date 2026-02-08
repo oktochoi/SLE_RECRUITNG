@@ -8,7 +8,7 @@ export default function Recruiting() {
     <div className={styles.container}>
       <h2 className={styles.title}>RECRUITING</h2>
       <Link 
-        href="https://docs.google.com/forms/d/e/1FAIpQLSc9EIMukZhMV2DV7ANwW4zCvJK5Al0mkPrmvRaWNl11U7fPmg/viewform?usp=header"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSdlDESVuVbGKyD5_qKnBzhK8FgwcuNAkSsoUgstiv62Qostpg/viewform?usp=dialog"
         className={styles.applyButton}
       >
         지금 지원하기

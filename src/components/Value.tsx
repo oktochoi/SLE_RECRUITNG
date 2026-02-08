@@ -52,7 +52,7 @@ export default function Value() {
                 alt={card.alt}
                 width={size.width}
                 height={size.height}
-                style={{ objectFit: 'contain', transition: 'all 0.2s ease' }}
+                style={{ width: 'auto', height: 'auto', maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', transition: 'all 0.2s ease' }}
               />
             </div>
           );

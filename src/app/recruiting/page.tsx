@@ -88,6 +88,7 @@ export default function RecruitingPage() {
             <span className={styles.box}>{secondDigit}</span>
             <span className={styles.subtitle}>일</span>
           </div>
+          
 
           <div className={styles.buttonWrapper}>
             <Link href="https://docs.google.com/forms/d/e/1FAIpQLSdlDESVuVbGKyD5_qKnBzhK8FgwcuNAkSsoUgstiv62Qostpg/viewform?usp=dialog" target="_blank">

@@ -1,333 +1,268 @@
 .wrapper {
   position: relative;
+  z-index: 3;
   width: 100%;
-  height: 880px;
+  min-height: 90vh;
+  background: var(--background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 9rem 6vw 5rem;
   overflow: hidden;
-  background: #000000;
+  text-align: center;
 }
 
-.backgroundGradient {
+.weave {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
   z-index: 0;
+  top: -6%;
+  right: -6%;
+  width: min(26vw, 300px);
+  height: min(26vw, 300px);
+  pointer-events: none;
+  opacity: 0.5;
 }
 
-.content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  z-index: 10;
-  padding: 20px;
+.eyebrow,
+.title,
+.days,
+.heroApply {
+  position: relative;
+  z-index: 1;
 }
 
-.title, .subtitle {
-  text-align: center;
-  font-family: "Noto Sans KR";
-  font-size: 68px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 130%;
-  letter-spacing: -1.36px;
-  background: linear-gradient(91deg, #B8FFB2 0.27%, #72BF6B 99.53%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  word-break: keep-all;
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.title {
+  color: var(--foreground);
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 9vw, 6.5rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin: 0 0 2.5rem;
 }
 
 .days {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 24px;
-  gap: 10px;
-  color: black;
-  text-align: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 2.5rem;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--muted);
 }
 
 .box {
-  width: 72px;
-  height: 72px;
-  flex-shrink: 0;
-  border-radius: 12px;
-  background: var(--Primary-01, #72BF6B);
-  color: var(--Gray-05, #060606);
-  text-align: center;
-  font-family: "Noto Sans KR";
-  font-size: 52px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 130%;
-  letter-spacing: -1.04px;
+  min-width: 44px;
+  height: 56px;
+  padding: 0 6px;
+  border: 1px solid var(--hairline);
+  color: var(--foreground);
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 800;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* ✅ 반응형 대응 */
-@media screen and (max-width: 1024px) {
-  .title, .subtitle {
-    font-size: 48px;
-  }
-
-  .box {
-    width: 56px;
-    height: 56px;
-    font-size: 40px;
-  }
-
-  .days {
-    font-size: 24px;
-  }
+.heroApply {
+  width: fit-content;
+  margin: 0 auto;
+  color: var(--foreground);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  border-bottom: 2px solid var(--foreground);
+  padding-bottom: 6px;
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-@media screen and (max-width: 640px) {
-  .title, .subtitle {
-    font-size: 36px;
-  }
-
-  .box {
-    width: 48px;
-    height: 48px;
-    font-size: 32px;
-  }
-
-  .days {
-    font-size: 20px;
-  }
-}
-
-
-.buttonWrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 120px;
-}
-
-
-.button {
-  transition: transform 0.3s ease;
-}
-
-.button:hover {
-  transform: scale(1.05);
+.heroApply:hover {
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
 .mainContent {
+  position: relative;
+  z-index: 3;
   width: 100%;
-  background: #000000;
-  padding: 80px 20px;
+  background: var(--background);
+  padding: 6rem 6vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 80px;
+  gap: 6rem;
+}
+
+.index {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  margin-bottom: 1.5rem;
+}
+
+.heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+  max-width: 1400px;
+  margin-bottom: 2.5rem;
+}
+
+.heading .index {
+  margin-bottom: 0;
 }
 
 /* 타임라인 섹션 */
 .timelineSection {
   width: 100%;
   max-width: 1400px;
-  padding: 40px 20px;
 }
 
 .timelineGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  width: 100%;
+  border-top: 1px solid var(--hairline);
 }
 
 .timelineCard {
-  background: #0F0F0F;
-  border-radius: 16px;
-  padding: 32px 24px;
-  border: 1px solid rgba(114, 191, 107, 0.2);
-  transition: all 0.3s ease;
+  padding: 28px 24px 0;
+  text-align: center;
 }
 
-.timelineCard:hover {
-  border-color: rgba(114, 191, 107, 0.5);
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(114, 191, 107, 0.15);
+.timelineCard:not(:first-child) {
+  border-left: 1px solid var(--hairline);
 }
 
 .timelineDate {
-  color: #72BF6B;
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: 18px;
-  font-weight: 600;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.02em;
   margin-bottom: 12px;
-  line-height: 1.4;
 }
 
 .timelineTitle {
-  color: #FFFFFF;
-  font-family: "Noto Sans KR", sans-serif;
+  color: var(--foreground);
+  font-family: var(--font-display);
   font-size: 16px;
-  font-weight: 400;
-  line-height: 1.6;
+  font-weight: 700;
+  line-height: 1.4;
 }
 
 /* 중앙 제목 */
 .mainTitle {
-  color: #FFFFFF;
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: 48px;
-  font-weight: 700;
+  color: var(--foreground);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 800;
   text-align: center;
-  line-height: 1.3;
-  letter-spacing: -0.96px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
-/* 원형 카드 섹션 */
+/* 지원 조건 */
 .criteriaSection {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
   width: 100%;
-  max-width: 1400px;
-  padding: 0 20px;
+  max-width: 1000px;
 }
 
-.criteriaCard {
-  background: linear-gradient(135deg, #0F0F0F 0%, #1a1a1a 100%);
-  border-radius: 24px;
+.criteriaList {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 48px 32px;
-  border: 1px solid rgba(114, 191, 107, 0.2);
-  color: #FFFFFF;
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.7;
+  flex-direction: column;
+}
+
+.criteriaItem {
+  color: var(--foreground);
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.4vw, 1.6rem);
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
   text-align: center;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-  min-height: 200px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--hairline);
+  margin: 0;
 }
 
-.criteriaCard::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(114, 191, 107, 0.1), transparent);
-  transition: left 0.5s ease;
-}
-
-.criteriaCard:hover::before {
-  left: 100%;
-}
-
-.criteriaCard:hover {
-  border-color: rgba(114, 191, 107, 0.5);
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(114, 191, 107, 0.25);
-  background: linear-gradient(135deg, #1a1a1a 0%, #0F0F0F 100%);
+.criteriaList .criteriaItem:first-child {
+  border-top: 1px solid var(--hairline);
 }
 
 /* 모집 분야 섹션 */
 .recruitmentSection {
   width: 100%;
   max-width: 1400px;
-  padding: 60px 20px;
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 3rem;
 }
 
 .sectionTitle {
-  color: #FFFFFF;
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: 42px;
-  font-weight: 700;
-  text-align: center;
-  letter-spacing: -0.84px;
+  color: var(--foreground);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  letter-spacing: -0.02em;
+  margin: 0;
 }
 
 .fieldCard {
-  background: linear-gradient(135deg, #0F0F0F 0%, #1a1a1a 100%);
-  border-radius: 24px;
-  padding: 48px 40px;
-  border: 1px solid rgba(114, 191, 107, 0.2);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-.fieldCard::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, #72BF6B, transparent);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.fieldCard:hover {
-  border-color: rgba(114, 191, 107, 0.4);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(114, 191, 107, 0.2);
-}
-
-.fieldCard:hover::before {
-  opacity: 1;
-}
-
-.fieldContent {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  position: relative;
-  z-index: 1;
+  border-top: 1px solid var(--hairline);
+  padding-top: 40px;
+  text-align: center;
 }
 
 .fieldTitle {
-  color: #72BF6B;
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: 36px;
-  font-weight: 700;
-  letter-spacing: -0.72px;
+  color: var(--foreground);
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 32px;
 }
 
 .requirementsList {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  max-width: 760px;
+  margin: 0 auto;
 }
 
 .requirementsGroup {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 16px;
 }
 
 .requirementsTitle {
-  color: #72BF6B;
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: 20px;
-  font-weight: 700;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   padding-bottom: 8px;
-  border-bottom: 1px solid rgba(114, 191, 107, 0.2);
 }
 
 .requirementsList ul {
@@ -336,59 +271,57 @@
   margin: 0;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 12px;
+  text-align: left;
 }
 
 .requirementsList li {
-  color: #A1A1A1;
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: 16px;
+  color: var(--foreground);
+  font-size: 15px;
   font-weight: 400;
   line-height: 1.6;
-  padding-left: 20px;
+  padding-left: 18px;
   position: relative;
 }
 
 .requirementsList li::before {
-  content: '•';
-  color: #72BF6B;
+  content: '/';
+  color: var(--muted);
   position: absolute;
   left: 0;
-  font-size: 20px;
 }
 
 /* 지원하기 버튼 */
-.applyButton {
-  display: inline-flex;
+.applyWrap {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background: #72BF6B;
-  color: #060606;
-  padding: 20px 60px;
-  border-radius: 16px;
+  gap: 12px;
+}
+
+.applyButton {
+  display: inline-block;
+  color: var(--foreground);
   text-decoration: none;
-  transition: all 0.3s ease;
-  gap: 8px;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  border-bottom: 3px solid var(--foreground);
+  padding-bottom: 8px;
+  transition: color 0.25s ease, border-color 0.25s ease;
 }
 
 .applyButton:hover {
-  background: #5cae55;
-  transform: scale(1.05);
-  box-shadow: 0 8px 24px rgba(114, 191, 107, 0.4);
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
-.applyButtonText {
-  font-size: 24px;
-  font-weight: 700;
-  color: #060606;
-}
-
-.applyButtonSubtext {
-  font-size: 14px;
-  font-weight: 400;
-  color: rgba(6, 6, 6, 0.7);
+.applySub {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
 }
 
 /* 반응형 디자인 */
@@ -397,16 +330,30 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .criteriaSection {
-    grid-template-columns: repeat(2, 1fr);
+  .timelineCard:nth-child(2n+1) {
+    padding-left: 0;
+    border-left: none;
   }
 
+  .requirementsList {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
 }
 
 @media screen and (max-width: 768px) {
+  .wrapper {
+    padding: 6rem 6vw 3rem;
+    min-height: auto;
+  }
+
+  .weave {
+    display: none;
+  }
+
   .mainContent {
-    padding: 60px 16px;
-    gap: 60px;
+    padding: 4rem 6vw;
+    gap: 4rem;
   }
 
   .timelineGrid {
@@ -414,66 +361,20 @@
   }
 
   .timelineCard {
-    padding: 24px 20px;
+    padding: 24px 0 0 !important;
+    border-left: none !important;
+    border-top: 1px solid var(--hairline);
   }
 
-  .timelineDate {
-    font-size: 16px;
-  }
-
-  .timelineTitle {
-    font-size: 14px;
+  .timelineCard:first-child {
+    border-top: none;
   }
 
   .mainTitle {
-    font-size: 32px;
-  }
-
-  .criteriaSection {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .criteriaCard {
-    border-radius: 20px;
-    padding: 36px 24px;
-    font-size: 16px;
-    min-height: 180px;
-  }
-
-  .sectionTitle {
-    font-size: 32px;
-  }
-
-  .fieldTitle {
     font-size: 28px;
   }
 
-  .fieldCard {
-    padding: 36px 24px;
-  }
-
-  .requirementsList {
-    gap: 20px;
-  }
-
-  .requirementsTitle {
-    font-size: 18px;
-  }
-
-  .requirementsList li {
-    font-size: 14px;
-  }
-
-  .applyButton {
-    padding: 16px 40px;
-  }
-
-  .applyButtonText {
-    font-size: 20px;
-  }
-
-  .applyButtonSubtext {
-    font-size: 12px;
+  .fieldTitle {
+    font-size: 24px;
   }
 }

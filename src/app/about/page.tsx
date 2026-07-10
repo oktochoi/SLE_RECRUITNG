@@ -3,6 +3,7 @@
 import Header from "@/components/Header";
 import Footer from '@/components/Footer';
 import Effect from "@/components/Effect";
+import Weave from "@/components/Weave";
 import Image from "next/image";
 import styles from './about.module.css';
 
@@ -48,25 +49,28 @@ export default function AboutPage() {
   return (
     <>
       <Header />
-      
+
       <section className={styles.hero}>
-        <div className={styles.heroContent}>
-          <h1 className={styles.heroTitle}>슬기짜기</h1>
-          <div className={styles.heroUnderline}></div>
-          <p className={styles.heroDescription}>
-            한동대학교 컴퓨터공학과 동아리 슬기짜기는<br />
-            함께 성장하고 함께 배우는 공간입니다.
-          </p>
-        </div>
+        <Weave className={styles.weave} />
+        <span className={styles.eyebrow}>ABOUT</span>
+        <h1 className={styles.heroTitle}>슬기짜기</h1>
+        <p className={styles.heroDescription}>
+          한동대학교 컴퓨터공학과 동아리 슬기짜기는<br />
+          함께 성장하고 함께 배우는 공간입니다.
+        </p>
       </section>
 
       <Effect />
 
       <section className={styles.valuesSection}>
-        <h2 className={styles.sectionTitle}>우리의 가치</h2>
+        <div className={styles.heading}>
+          <span className={styles.index}>01</span>
+          <h2 className={styles.sectionTitle}>우리의 가치</h2>
+        </div>
         <div className={styles.valuesGrid}>
           {values.map((value, index) => (
             <div key={index} className={styles.valueCard}>
+              <span className={styles.valueNum}>0{index + 1}</span>
               <h3 className={styles.valueTitle}>{value.title}</h3>
               <p className={styles.valueDescription}>{value.description}</p>
             </div>
@@ -75,13 +79,13 @@ export default function AboutPage() {
       </section>
 
       <section className={styles.activitiesSection}>
-        <h2 className={styles.sectionTitle}>주요 활동</h2>
+        <div className={styles.heading}>
+          <span className={styles.index}>02</span>
+          <h2 className={styles.sectionTitle}>주요 활동</h2>
+        </div>
         <div className={styles.activitiesGrid}>
           {activities.map((activity, index) => (
-            <div 
-              key={index} 
-              className={styles.activityCard}
-            >
+            <div key={index} className={styles.activityCard}>
               <div className={styles.activityImageWrapper}>
                 <Image
                   src={activity.image}
@@ -91,26 +95,22 @@ export default function AboutPage() {
                   className={styles.activityImage}
                 />
               </div>
-              <div className={styles.activityHeader}>
-                <h3 className={styles.activityTitle}>{activity.title}</h3>
-              </div>
-              <div className={styles.activityDescriptionContainer}>
-                <p className={styles.activityDescription}>{activity.description}</p>
-              </div>
+              <h3 className={styles.activityTitle}>{activity.title}</h3>
+              <p className={styles.activityDescription}>{activity.description}</p>
             </div>
           ))}
         </div>
       </section>
 
       <section className={styles.aboutSection}>
-        <div className={styles.aboutContent}>
-          <h2 className={styles.aboutTitle}>함께 만들어가는<br />슬기짜기</h2>
-          <p className={styles.aboutText}>
-            슬기짜기는 단순한 동아리가 아닌, 함께 성장하고 함께 배우는 커뮤니티입니다.<br />
-            우리는 실력보다 열정을, 경험보다 성장 가능성을 더 중요하게 생각합니다.<br />
-            새로운 도전을 두려워하지 않고, 함께 해결해나가는 것이 슬기짜기의 정신입니다.
-          </p>
-        </div>
+        <Weave className={styles.aboutWeave} />
+        <span className={styles.index}>03</span>
+        <h2 className={styles.aboutTitle}>함께 만들어가는<br />슬기짜기</h2>
+        <p className={styles.aboutText}>
+          슬기짜기는 단순한 동아리가 아닌, 함께 성장하고 함께 배우는 커뮤니티입니다.<br />
+          우리는 실력보다 열정을, 경험보다 성장 가능성을 더 중요하게 생각합니다.<br />
+          새로운 도전을 두려워하지 않고, 함께 해결해나가는 것이 슬기짜기의 정신입니다.
+        </p>
       </section>
 
       <Effect />

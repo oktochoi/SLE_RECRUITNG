@@ -1,62 +1,26 @@
-'use client';
-
 import Image from 'next/image';
 import styles from './Value.module.css';
-import { useState } from 'react';
+
+const cards = [
+  { src: '/Solve.svg', alt: 'Solve' },
+  { src: '/Learn.svg', alt: 'Learn' },
+  { src: '/Evolve.svg', alt: 'Evolve' },
+];
 
 export default function Value() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
- const cards = [
-    {
-      default: '/S.svg',
-      hover: '/Solve.svg',
-      alt: 'S',
-      defaultSize: { width: 100, height: 160 },
-      hoverSize: { width: 300, height: 360 },
-    },
-    {
-      default: '/L.svg',
-      hover: '/Learn.svg',
-      alt: 'L',
-      defaultSize: { width: 100, height: 160 },
-      hoverSize: { width: 300, height: 360 },
-    },
-    {
-      default: '/E.svg',
-      hover: '/Evolve.svg',
-      alt: 'E',
-      defaultSize: { width: 100, height: 160 },
-      hoverSize: { width: 300, height: 360 },
-    },
-  ];
- return (
+  return (
     <section className={styles.section}>
-      <h2 className={styles.title}>SLEGIZZAGI'S VALUES</h2>
+      <div className={styles.heading}>
+        <span className={styles.index}>01</span>
+        <h2 className={styles.title}>SLEGIZZAGI&rsquo;S VALUES</h2>
+      </div>
 
       <div className={styles.cardGrid}>
-        {cards.map((card, index) => {
-          const isHovered = hoveredIndex === index;
-          const size = isHovered ? card.hoverSize : card.defaultSize;
-          const src = isHovered ? card.hover : card.default;
-
-          return (
-            <div
-              key={index}
-              className={styles.card}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              <Image
-                src={src}
-                alt={card.alt}
-                width={size.width}
-                height={size.height}
-                style={{ width: 'auto', height: 'auto', maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', transition: 'all 0.2s ease' }}
-              />
-            </div>
-          );
-        })}
+        {cards.map((card) => (
+          <div key={card.alt} className={styles.card}>
+            <Image src={card.src} alt={card.alt} width={300} height={360} className={styles.cardImage} />
+          </div>
+        ))}
       </div>
     </section>
   );

@@ -6,7 +6,9 @@ const Effect: React.FC = () => {
     <div className={styles.tickerWrap}>
       <div className={styles.ticker}>
         {Array.from({ length: 20 }).map((_, i) => (
-          <span key={i}>RECRUITING 02/23(월) ~ 03/11(수)</span>
+          <span key={i}>
+            RECRUITING <em>02/23(월) ~ 03/11(수)</em>
+          </span>
         ))}
       </div>
     </div>

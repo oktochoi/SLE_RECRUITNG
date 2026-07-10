@@ -1,72 +1,100 @@
 .wrapper {
+  position: relative;
   width: 100%;
   min-height: 100vh;
-  background-color: black;
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  overflow-x: hidden; /* ✅ 화면 넘침 방지 */
+  overflow-x: hidden;
   padding-left: 0;
   padding-right: 0;
   box-sizing: border-box;
 }
 
+.heading {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1400px;
+  padding: 9rem 6vw 3rem;
+  text-align: center;
+}
+
+.index {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
 
 .title {
-  color: white;
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 2rem;
-  text-align: center;
-  padding-top: 150px;
+  color: var(--foreground);
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 8vw, 5.5rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  margin: 0;
 }
 
 .filter {
+  position: relative;
+  z-index: 3;
   display: flex;
-  gap: 1rem;
-  margin-bottom: 2.5rem;
   justify-content: center;
+  gap: 24px;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 6vw;
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 20px;
 }
 
 .filterButton {
-  background-color: #1a1a1a;
-  color: #aaa;
-  padding: 0.5rem 1.25rem;
-  border-radius: 9999px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  transition: all 0.2s ease-in-out;
+  background: none;
+  color: var(--muted);
+  padding: 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
   border: none;
   cursor: pointer;
 }
 
 .filterButton:hover {
-  background-color: #333;
-  color: white;
+  color: var(--foreground);
 }
 
 .active {
-  background-color: white;
-  color: black;
+  color: var(--accent);
 }
 
 .grid {
+  position: relative;
+  z-index: 3;
   display: grid;
-  gap: 3rem;
+  gap: 2px;
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 6vw;
 
-  /* ✅ 기본값을 2열로 설정 */
   grid-template-columns: repeat(2, 1fr);
 }
 
-/* ✅ 태블릿에서 3열 */
 @media screen and (min-width: 768px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* ✅ PC에서 4열 */
 @media screen and (min-width: 1024px) {
   .grid {
     grid-template-columns: repeat(4, 1fr);
@@ -74,63 +102,67 @@
 }
 
 .imageWrapper {
-  width: 100%;               /* 부모(grid cell)에 맞게 채움 */
-  aspect-ratio: 1 / 1;       /* 정사각형 비율 유지 */
+  width: 100%;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
-  border-radius: 0.5rem;
+  background: #141412;
 }
 
 .image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 0.5rem;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s var(--ease-precise);
 }
 
 .image:hover {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 .pagination {
+  position: relative;
+  z-index: 3;
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  margin-top: 2.5rem;
+  align-items: center;
+  gap: 24px;
+  margin: 3rem 0 6rem;
 }
 
 .paginationButton {
-  color: white;
-  padding: 0.5rem 0.75rem;
+  color: var(--foreground);
+  padding: 0;
   background-color: transparent;
   cursor: pointer;
   transition: opacity 0.2s;
-  padding-bottom: 30px;
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 14px;
 }
 
 .paginationButton:disabled {
-  opacity: 0.4;
+  opacity: 0.3;
   cursor: not-allowed;
 }
 
 .paginationText {
-  color: white;
-  padding: 0.5rem;
-  font-size: 0.875rem;
-  font-weight: 500;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
 }
 
 @media screen and (max-width: 480px) {
   .grid {
-    gap: 1rem;
+    gap: 1px;
   }
 
   .pagination {
-    gap: 0.5rem;
+    gap: 16px;
   }
 
   .filter {
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 14px;
   }
 }

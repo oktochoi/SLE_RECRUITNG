@@ -1,31 +1,38 @@
 .section {
-  padding: 100px 20px;
-  background-color: black;
-  color: white;
-  text-align: center;
+  position: relative;
+  z-index: 3;
+  padding: 8rem 6vw;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 4rem;
+}
+
+.index {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
 }
 
 .title {
-  color: var(--White, #FFF);
-  text-align: center;
-  font-family: "Noto Sans KR";
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 130%;
-  letter-spacing: -0.96px;
-  margin-bottom: 80px;
-  background: linear-gradient(135deg, #ffffff 0%, #72BF6B 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  letter-spacing: -0.02em;
+  margin: 0;
 }
 
 .studyGrid {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 60px;
+  gap: 4rem;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -33,148 +40,102 @@
 .studyMain {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+  gap: 0;
   width: 100%;
+  border-top: 1px solid var(--hairline);
 }
 
 .studyCard {
-  background: linear-gradient(135deg, #0F0F0F 0%, #1a1a1a 100%);
-  border-radius: 24px;
-  padding: 48px 40px;
-  border: 1px solid rgba(114, 191, 107, 0.2);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-  text-align: left;
+  padding: 40px 40px 0;
+  text-align: center;
 }
 
-.studyCard::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, #72BF6B, transparent);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.studyCard:hover {
-  border-color: rgba(114, 191, 107, 0.5);
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(114, 191, 107, 0.2);
-}
-
-.studyCard:hover::before {
-  opacity: 1;
-}
-
-.cardIcon {
-  font-size: 48px;
-  margin-bottom: 20px;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.studyCard:hover .cardIcon {
-  transform: scale(1.1) rotate(5deg);
+.studyMain .studyCard + .studyCard {
+  border-left: 1px solid var(--hairline);
 }
 
 .cardTitle {
-  color: #72BF6B;
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: 28px;
+  color: var(--foreground);
+  font-family: var(--font-display);
+  font-size: 22px;
   font-weight: 700;
-  margin-bottom: 20px;
-  letter-spacing: -0.56px;
+  margin: 0 0 20px;
+  letter-spacing: -0.02em;
 }
 
 .cardText {
-  color: #A1A1A1;
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: 17px;
+  color: var(--muted);
+  font-size: 15px;
   font-weight: 400;
   line-height: 1.8;
-  letter-spacing: -0.34px;
-  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+  margin: 0 auto 12px;
+  max-width: 440px;
 }
 
 .techSection {
   width: 100%;
-  background: linear-gradient(135deg, #0F0F0F 0%, #1a1a1a 100%);
-  border-radius: 24px;
-  padding: 48px 40px;
-  border: 1px solid rgba(114, 191, 107, 0.2);
+  border-top: 1px solid var(--hairline);
+  padding-top: 32px;
+  text-align: center;
 }
 
-.techTitle {
-  color: #72BF6B;
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 32px;
-  letter-spacing: -0.56px;
-  text-align: center;
+.techLabel {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
 }
 
 .techGrid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 16px;
+  gap: 0 20px;
 }
 
 .techBadge {
-  background: rgba(114, 191, 107, 0.1);
-  border: 1px solid rgba(114, 191, 107, 0.3);
-  border-radius: 12px;
-  padding: 12px 24px;
-  color: #FFFFFF;
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: 16px;
+  color: var(--foreground);
+  font-size: 15px;
   font-weight: 500;
-  letter-spacing: -0.32px;
-  transition: all 0.3s ease;
+  letter-spacing: -0.01em;
+  padding: 4px 0;
+  position: relative;
 }
 
-.techBadge:hover {
-  background: rgba(114, 191, 107, 0.2);
-  border-color: rgba(114, 191, 107, 0.5);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(114, 191, 107, 0.2);
+.techBadge:not(:last-child)::after {
+  content: '/';
+  margin-left: 20px;
+  color: var(--muted);
 }
 
 .moreButton {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: #72BF6B;
-  color: #060606;
-  padding: 16px 40px;
-  border-radius: 12px;
+  align-self: center;
+  color: var(--foreground);
   text-decoration: none;
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  transition: all 0.3s ease;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  border-bottom: 1px solid var(--foreground);
+  padding-bottom: 4px;
+  width: fit-content;
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .moreButton:hover {
-  background: #5cae55;
-  transform: scale(1.05);
-  box-shadow: 0 8px 24px rgba(114, 191, 107, 0.4);
-}
-
-.image {
-  border-radius: 12px;
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
 .sliderContainer {
-  width: 100%;
+  width: 100vw;
+  margin-left: calc(-6vw);
   overflow: hidden;
   position: relative;
-  min-height: 300px;
+  min-height: 260px;
   display: flex;
   align-items: center;
 }
@@ -182,7 +143,7 @@
 .sliderTrack {
   display: flex;
   align-items: stretch;
-  width: calc(2000px * 2 + 400px * 4); /* study2.svg 2개 + 사진 4개, 여백 없음 */
+  width: calc(2000px * 2 + 400px * 4);
   animation: scroll 30s linear infinite;
 }
 
@@ -191,17 +152,16 @@
   display: block;
 }
 
-/* Next/Image는 className을 span에 주므로, 내부 img를 직접 선택 */
-.sliderTrack img[src*=".svg"] {
+.sliderTrack img[src*='.svg'] {
   height: 260px;
   width: auto;
   display: block;
   margin: 0;
 }
 
-.sliderTrack img[src*=".jpg"] {
+.sliderTrack img[src*='.jpg'] {
   width: 400px;
-  height: 300px;
+  height: 260px;
   object-fit: cover;
   display: block;
   margin: 0;
@@ -212,78 +172,46 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-2000px - 400px * 2)); /* study2.svg 1개 + 사진 2개만큼 이동 */
+    transform: translateX(calc(-2000px - 400px * 2));
   }
 }
 
-.image {
-  transition: transform 0.2s ease;
-}
-
-.linkImage {
-  cursor: pointer;
-}
-
-.linkImage:hover {
-  transform: scale(1.03);
-}
-
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1024px) {
   .studyMain {
     grid-template-columns: 1fr;
-    gap: 32px;
+  }
+
+  .studyMain .studyCard + .studyCard {
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid var(--hairline);
+    padding-top: 32px;
+    margin-top: 8px;
+  }
+
+  .studyCard {
+    padding-right: 0;
   }
 }
 
 @media screen and (max-width: 768px) {
   .section {
-    padding: 60px 20px;
+    padding: 5rem 6vw;
   }
 
-  .title {
-    font-size: 36px;
-    margin-bottom: 60px;
-  }
-
-  .studyMain {
-    gap: 24px;
-  }
-
-  .studyCard {
-    padding: 32px 24px;
-  }
-
-  .cardIcon {
-    font-size: 40px;
-    margin-bottom: 16px;
+  .heading {
+    margin-bottom: 2.5rem;
   }
 
   .cardTitle {
-    font-size: 24px;
-    margin-bottom: 16px;
+    font-size: 19px;
   }
 
   .cardText {
-    font-size: 15px;
-    margin-bottom: 10px;
-  }
-
-  .techSection {
-    padding: 32px 24px;
-  }
-
-  .techTitle {
-    font-size: 24px;
-    margin-bottom: 24px;
-  }
-
-  .techBadge {
-    padding: 10px 20px;
     font-size: 14px;
   }
 
-  .moreButton {
-    padding: 14px 32px;
-    font-size: 16px;
+  .sliderContainer {
+    margin-left: calc(-5vw);
   }
 }

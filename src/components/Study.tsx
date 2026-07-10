@@ -7,12 +7,14 @@ export default function StudySection() {
 
   return (
     <section className={styles.section}>
-      <h2 className={styles.title}>SLEGIZZAGI'S STUDY</h2>
+      <div className={styles.heading}>
+        <span className={styles.index}>03</span>
+        <h2 className={styles.title}>SLEGIZZAGI&rsquo;S STUDY</h2>
+      </div>
 
       <div className={styles.studyGrid}>
         <div className={styles.studyMain}>
           <div className={styles.studyCard}>
-            <div className={styles.cardIcon}>📚</div>
             <h3 className={styles.cardTitle}>슬기짜기 스터디</h3>
             <p className={styles.cardText}>
               슬기짜기에서는 학년별 필수 스터디, 직군별 필수 스터디를 진행합니다.
@@ -26,7 +28,6 @@ export default function StudySection() {
           </div>
 
           <div className={styles.studyCard}>
-            <div className={styles.cardIcon}>🎉</div>
             <h3 className={styles.cardTitle}>슬년회</h3>
             <p className={styles.cardText}>
               방학 프로젝트의 마지막 주 마지막 날에는 슬년회가 열립니다.
@@ -38,12 +39,12 @@ export default function StudySection() {
         </div>
 
         <div className={styles.techSection}>
-          <h3 className={styles.techTitle}>진행 중 / 예정된 스터디</h3>
+          <span className={styles.techLabel}>진행 중 / 예정된 스터디</span>
           <div className={styles.techGrid}>
             {techStack.map((tech, index) => (
-              <div key={index} className={styles.techBadge}>
+              <span key={index} className={styles.techBadge}>
                 {tech}
-              </div>
+              </span>
             ))}
           </div>
         </div>
@@ -130,7 +131,7 @@ export default function StudySection() {
         </div>
 
         <Link href="/about" className={styles.moreButton}>
-          동아리 소개 자세히보기
+          동아리 소개 자세히보기 →
         </Link>
       </div>
     </section>

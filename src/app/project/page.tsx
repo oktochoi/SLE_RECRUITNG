@@ -185,13 +185,10 @@ export default function ProjectsPage() {
     <div className={styles.wrapper}>
       <Header />
 
-      <Image
-        src="/project.svg"
-        alt="project"
-        width={840}
-        height={1028}
-        className={styles.title}
-      />
+      <div className={styles.heading}>
+        <span className={styles.index}>ARCHIVE</span>
+        <h1 className={styles.title}>PROJECTS</h1>
+      </div>
 
       <div className={styles.filter}>
         {tags.map((tag) => (

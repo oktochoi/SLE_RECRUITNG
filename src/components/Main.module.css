@@ -1,34 +1,57 @@
 .wrapper {
   position: relative;
   width: 100%;
-  min-height: 100vh; /* ✅ 최소 화면 채우되, 내용 많으면 늘어나게 */
+  min-height: 82vh;
+  background: var(--background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 11rem 6vw 5rem;
   overflow: hidden;
+  text-align: center;
 }
 
-.backgroundImage {
+.glow {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   z-index: 0;
+  top: 8%;
+  left: 50%;
+  width: min(70vw, 900px);
+  height: min(70vw, 900px);
+  transform: translate(-50%, -30%);
+  background: radial-gradient(circle, rgba(52, 211, 153, 0.14) 0%, rgba(52, 211, 153, 0.05) 40%, transparent 70%);
+  filter: blur(10px);
+  pointer-events: none;
+  opacity: 0;
+  animation: glowIn 2s ease-out forwards;
+  animation-delay: 0.2s;
 }
 
-.gradientOverlay {
+.sideThread {
   position: absolute;
-  bottom: 0;                 /* ✅ 아래쪽 기준으로 */
-  left: 0;
-  width: 100%;
-  height: 20%;               /* ✅ 전체의 20%만큼 높이 */
-  background: linear-gradient(
-    180deg,
-    rgba(6, 6, 6, 0.00) 0%,
-    rgba(114, 191, 107, 0.10) 100%
-  );
-  z-index: 1;
+  z-index: 0;
+  top: 0;
+  left: 1vw;
+  width: 6vw;
+  max-width: 90px;
+  min-width: 40px;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
 }
 
+.sideThreadPath {
+  fill: none;
+  stroke: var(--foreground);
+  stroke-width: 1.3;
+  stroke-linecap: round;
+  opacity: 0.22;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: sideDraw 2.2s var(--ease-precise) forwards;
+  animation-delay: 0.4s;
+}
 
 .content {
   position: relative;
@@ -36,25 +59,213 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 430px 20px 200px; /* ✅ 위아래 여백 충분히 주기 */
-  text-align: center;
-  color: white;
 }
 
-.titleImage {
-  width: 400px;
-  height: auto;
-  margin-bottom: 42px;
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin: 0 0 20px;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: rise 0.7s var(--ease-precise) both;
+  animation-delay: 0.1s;
+}
+
+.wordmark {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2.6rem, 9vw, 7.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  color: var(--foreground);
+  max-width: 100%;
+  overflow-wrap: break-word;
+  clip-path: inset(0 100% 0 0);
+  animation: reveal 1s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  animation-delay: 0.3s;
+}
+
+.mark {
+  position: absolute;
+  top: -14%;
+  right: -9%;
+  width: clamp(56px, 9vw, 92px);
+  height: clamp(36px, 6vw, 60px);
+  overflow: visible;
+  transform-origin: 80% 20%;
+  animation: markIdle 6s var(--ease-precise) infinite alternate;
+  animation-delay: 2s;
+}
+
+.markThread {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  opacity: 0;
+  animation: markDraw 0.9s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  animation-delay: 1.25s;
+}
+
+.markKnot {
+  fill: var(--accent);
+  opacity: 0;
+  transform: scale(0);
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: markPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: 2s;
 }
 
 .description {
-    color: var(--Gray-01, #A1A1A1);
-    text-align: center;
-    font-family: "Noto Sans KR";
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 170%; /* 34px */
-    letter-spacing: -0.4px;
+  margin: 32px auto 0;
+  max-width: 480px;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: -0.01em;
+  opacity: 0;
+  animation: rise 0.7s var(--ease-precise) both;
+  animation-delay: 1.35s;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes markDraw {
+  from {
+    opacity: 1;
+    stroke-dashoffset: 1;
+  }
+  to {
+    opacity: 0.9;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes markPop {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  55% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 0.95;
+    transform: scale(1);
+  }
+}
+
+@keyframes markIdle {
+  from {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  to {
+    transform: translate(-3px, 3px) rotate(-2deg);
+  }
+}
+
+@keyframes glowIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes sideDraw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eyebrow,
+  .wordmark,
+  .description,
+  .markThread,
+  .markKnot {
+    animation: none;
+    opacity: 1;
+    clip-path: none;
+  }
+
+  .mark {
+    animation: none;
+  }
+
+  .markThread {
+    opacity: 0.9;
+    stroke-dashoffset: 0;
+  }
+
+  .markKnot {
+    opacity: 0.95;
+    transform: scale(1);
+  }
+
+  .glow {
+    animation: none;
+    opacity: 1;
+  }
+
+  .sideThreadPath {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    min-height: auto;
+    padding: 8rem 6vw 3rem;
+  }
+
+  .sideThread {
+    display: none;
+  }
+
+  .glow {
+    width: 130vw;
+    height: 130vw;
+    top: 0;
+  }
+
+  .wordmark {
+    font-size: clamp(2.2rem, 12vw, 3.6rem);
+  }
+
+  .mark {
+    width: 40px;
+    height: 26px;
+    top: -20%;
+    right: -12%;
+  }
+
+  .description {
+    font-size: 13px;
+    max-width: 100%;
+  }
 }

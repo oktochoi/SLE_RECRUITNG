@@ -1,11 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import styles from "./qna.module.css";
 import Effect from "@/components/Effect";
+import Weave from "@/components/Weave";
 import { useState } from "react";
 
 export default function QAPage() {
@@ -48,16 +48,15 @@ export default function QAPage() {
       <Header />
 
       <section className={styles.wrapper}>
-        <div className={styles.titleContainer}>
-          <h2 className={styles.title}>Q&amp;A</h2>
-          <div className={styles.titleUnderline}></div>
-        </div>
-        <p className={styles.subtitle}>Get your answers here!</p>
+        <Weave className={styles.weave} />
+        <span className={styles.eyebrow}>FAQ</span>
+        <h1 className={styles.title}>Q&amp;A</h1>
+        <p className={styles.subtitle}>Get your answers here.</p>
 
         <div className={styles.accordionList}>
           {faqs.map((faq, index) => (
-            <div 
-              key={faq.id} 
+            <div
+              key={faq.id}
               className={`${styles.accordionItem} ${openIndex === index ? styles.open : ''}`}
               onClick={() => toggleAccordion(index)}
             >
@@ -66,18 +65,8 @@ export default function QAPage() {
                 <div className={styles.accordionButton}>
                   {faq.question}
                 </div>
-                <div className={styles.accordionIcon}>
-                  <svg 
-                    width="24" 
-                    height="24" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    strokeWidth="2"
-                    className={openIndex === index ? styles.rotated : ''}
-                  >
-                    <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+                <div className={`${styles.accordionIcon} ${openIndex === index ? styles.rotated : ''}`}>
+                  +
                 </div>
               </div>
               <div className={`${styles.answerContainer} ${openIndex === index ? styles.open : ''}`}>
@@ -90,26 +79,15 @@ export default function QAPage() {
         </div>
 
         <div className={styles.bottomBox}>
-          <div className={styles.bottomBoxInner}>
-            <h3 className={styles.bottomTitle}>Q&amp;A로 해결되지 않으셨다면?</h3>
-            <p className={styles.bottomText}>
-              기타 문의 사항 / 자세한 정보 등이 필요한 분을 위해!<br />
-              슬기짜기가 직접 보고 바로 답변드려요.<br />
-              아래 노션 링크에 편하게 남겨주세요.
-            </p>
-            <div className={styles.buttonWrapper}>
-              <Link href="https://open.kakao.com/o/gzqGyCLh" target="_blank" className={styles.linkButton}>
-                <Image
-                  src="/mu.svg"
-                  alt="질문방"
-                  width={280}
-                  height={88}
-                  className={styles.button}
-                />
-                <div className={styles.buttonGlow}></div>
-              </Link>
-            </div>
-          </div>
+          <span className={styles.index}>MORE</span>
+          <h3 className={styles.bottomTitle}>해결되지 않으셨다면</h3>
+          <p className={styles.bottomText}>
+            기타 문의 사항 / 자세한 정보 등이 필요한 분을 위해!<br />
+            슬기짜기가 직접 보고 바로 답변드려요.
+          </p>
+          <Link href="https://open.kakao.com/o/gzqGyCLh" target="_blank" className={styles.linkButton}>
+            질문방 바로가기 →
+          </Link>
         </div>
       </section>
       <Effect/>

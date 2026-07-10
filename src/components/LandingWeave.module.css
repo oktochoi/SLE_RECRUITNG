@@ -1,0 +1,49 @@
+.root {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  right: 1.5vw;
+  width: 7vw;
+  max-width: 110px;
+  min-width: 60px;
+  height: 100vh;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.thread {
+  stroke: var(--foreground);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  fill: none;
+  opacity: 0.34;
+  stroke-dasharray: 1;
+  stroke-dashoffset: calc(1 - var(--p, 0));
+}
+
+.knot {
+  fill: var(--accent);
+  opacity: 0;
+  transform: scale(0);
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: opacity 0.5s ease, transform 0.5s var(--ease-precise);
+}
+
+.knot.lit {
+  opacity: 0.9;
+  transform: scale(1);
+}
+
+@media screen and (max-width: 1100px) {
+  .root {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .thread {
+    stroke-dashoffset: 0;
+    opacity: 0.25;
+  }
+}

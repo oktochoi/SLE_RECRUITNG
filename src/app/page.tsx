@@ -2,6 +2,7 @@ import About from "@/components/About";
 import Effect from "@/components/Effect";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import LandingWeave from "@/components/LandingWeave";
 import Main from "@/components/Main";
 import Project from "@/components/Project";
 import Recruiting from "@/components/Recruiting";
@@ -35,10 +36,8 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
       />
 
-      {/* ✅ H1: 브랜드 키워드 명시 */}
-      <h1 className="sr-only">슬기짜기(SLE) — 한동대 컴퓨터공학 동아리</h1>
-
       {/* 당신의 섹션들 */}
+      <LandingWeave />
       <Header />
       <Main />
       <Value />

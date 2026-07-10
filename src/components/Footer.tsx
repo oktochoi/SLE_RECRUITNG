@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Footer.module.css';
 
@@ -7,7 +6,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.left}>
         <div className={styles.mix}>
-            <Image src="/Logo.svg" alt="SLE 로고" width={80} height={30} />
+            <span className={styles.logoText}>SLEGIZZAGI</span>
             <div className={styles.right}>
                 <Link href="/about">About</Link>
                 <Link href="/archive">Archive</Link>
@@ -16,8 +15,6 @@ export default function Footer() {
             </div>
         </div>
         <p>okto@handong.ac.kr<br />sledatabase@gmail.com</p>
-        <div className={styles.icons}>
-        </div>
         <small>Copyright Slegizzagi All rights reserved.</small>
       </div>
     </footer>

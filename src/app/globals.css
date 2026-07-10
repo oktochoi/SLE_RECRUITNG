@@ -1,34 +1,65 @@
 @import "tailwindcss";
 
 :root {
-  /* 배경과 글자색 무조건 고정 */
-  --background: #000000;
-  --foreground: #ffffff;
+  /* 3색 고정 시스템 — 배경 1 / 텍스트 1 / 포인트 1 */
+  --background: #0d0d0c;
+  --foreground: #f3f1ea;
+  --accent: #34d399;
+  --muted: #6b6a63;
+  --hairline: rgba(243, 241, 234, 0.12);
+
+  --font-display: "Pretendard", "Noto Sans KR", sans-serif;
+  --font-body: "Pretendard", "Noto Sans KR", sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --ease-precise: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-mono);
 }
 
-/* 다크모드 감지 코드 삭제 or 주석처리 */
-/*
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
-*/
+
+html {
+  background: var(--background);
+  scroll-behavior: smooth;
+}
 
 body {
-  background: var(--background) !important; /* 강제 검정 */
-  color: var(--foreground) !important;      /* 강제 흰색 */
-  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(ellipse 1200px 800px at 50% -10%, rgba(52, 211, 153, 0.05), transparent 60%),
+    radial-gradient(ellipse 1000px 700px at 100% 40%, rgba(255, 255, 255, 0.025), transparent 55%),
+    linear-gradient(180deg, #111110 0%, #0d0d0c 40%, #0a0a09 100%) !important;
+  color: var(--foreground) !important;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  position: relative;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
 }
 
 main, section, header, footer {
   background-color: transparent !important;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--background);
 }

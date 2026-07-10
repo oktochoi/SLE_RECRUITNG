@@ -4,7 +4,7 @@ import styles from './RecruitingPage.module.css';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Effect from "@/components/Effect";
-import Image from "next/image";
+import Weave from "@/components/Weave";
 import Link from "next/link";
 
 export default function RecruitingPage() {
@@ -76,32 +76,24 @@ export default function RecruitingPage() {
       <Header />
 
       <section className={styles.wrapper}>
-        <div className={styles.backgroundGradient}></div>
+        <Weave className={styles.weave} />
+        <span className={styles.eyebrow}>RECRUITING</span>
+        <h1 className={styles.title}>슬기짜기<br />리쿠르팅</h1>
 
-        <div className={styles.content}>
-          {/* <h2 className={styles.title}>현재는 지원을 받고 있지 않습니다.</h2>*/}
-          <h2 className={styles.title}>슬기짜기 리쿠르팅</h2>
-
-          <div className={styles.days}>
-            <span className={styles.subtitle}>지원 마감까지&nbsp;</span>
-            <span className={styles.box}>{firstDigit}</span>
-            <span className={styles.box}>{secondDigit}</span>
-            <span className={styles.subtitle}>일</span>
-          </div>
-          
-
-          <div className={styles.buttonWrapper}>
-            <Link href="https://docs.google.com/forms/d/e/1FAIpQLSdlDESVuVbGKyD5_qKnBzhK8FgwcuNAkSsoUgstiv62Qostpg/viewform?usp=dialog" target="_blank">
-              <Image
-                src="/rc2.svg"
-                alt="지금 지원하기"
-                width={280}
-                height={88}
-                className={styles.button}
-              />
-            </Link>
-          </div>
+        <div className={styles.days}>
+          <span className={styles.subtitle}>지원 마감까지</span>
+          <span className={styles.box}>{firstDigit}</span>
+          <span className={styles.box}>{secondDigit}</span>
+          <span className={styles.subtitle}>일</span>
         </div>
+
+        <Link
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdlDESVuVbGKyD5_qKnBzhK8FgwcuNAkSsoUgstiv62Qostpg/viewform?usp=dialog"
+          target="_blank"
+          className={styles.heroApply}
+        >
+          지금 지원하기 →
+        </Link>
       </section>
 
       <Effect />
@@ -109,6 +101,7 @@ export default function RecruitingPage() {
       <section className={styles.mainContent}>
         {/* 타임라인 섹션 */}
         <div className={styles.timelineSection}>
+          <span className={styles.index}>01</span>
           <div className={styles.timelineGrid}>
             {timelineItems.map((item, index) => (
               <div key={index} className={styles.timelineCard}>
@@ -120,78 +113,82 @@ export default function RecruitingPage() {
         </div>
 
         {/* 중앙 제목 */}
-        <h2 className={styles.mainTitle}>슬기짜기와 함께할 분을 찾고 있어요</h2>
+        <h2 className={styles.mainTitle}>슬기짜기와 함께할 분을<br />찾고 있어요</h2>
 
-        {/* 원형 카드 섹션 */}
+        {/* 지원 조건 */}
         <div className={styles.criteriaSection}>
-          {criteriaItems.map((item, index) => (
-            <div key={index} className={styles.criteriaCard}>
-              {item}
-            </div>
-          ))}
+          <span className={styles.index}>02</span>
+          <div className={styles.criteriaList}>
+            {criteriaItems.map((item, index) => (
+              <p key={index} className={styles.criteriaItem}>{item}</p>
+            ))}
+          </div>
         </div>
 
         {/* 모집 분야 섹션 */}
         <div className={styles.recruitmentSection}>
-          <h3 className={styles.sectionTitle}>모집 분야</h3>
+          <div className={styles.heading}>
+            <span className={styles.index}>03</span>
+            <h3 className={styles.sectionTitle}>모집 분야</h3>
+          </div>
 
           {/* 디자이너 섹션 */}
           <div className={styles.fieldCard}>
-            <div className={styles.fieldContent}>
-              <h4 className={styles.fieldTitle}>디자이너</h4>
-              <div className={styles.requirementsList}>
-                <div className={styles.requirementsGroup}>
-                  <div className={styles.requirementsTitle}>필수 요건</div>
-                  <ul>
-                    {designerRequirements.map((req, index) => (
-                      <li key={index}>{req}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div className={styles.requirementsGroup}>
-                  <div className={styles.requirementsTitle}>우대 사항</div>
-                  <ul>
-                    {designerPreferred.map((req, index) => (
-                      <li key={index}>{req}</li>
-                    ))}
-                  </ul>
-                </div>
+            <h4 className={styles.fieldTitle}>디자이너</h4>
+            <div className={styles.requirementsList}>
+              <div className={styles.requirementsGroup}>
+                <div className={styles.requirementsTitle}>필수 요건</div>
+                <ul>
+                  {designerRequirements.map((req, index) => (
+                    <li key={index}>{req}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className={styles.requirementsGroup}>
+                <div className={styles.requirementsTitle}>우대 사항</div>
+                <ul>
+                  {designerPreferred.map((req, index) => (
+                    <li key={index}>{req}</li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
 
           {/* 개발자 섹션 */}
           <div className={styles.fieldCard}>
-            <div className={styles.fieldContent}>
-              <h4 className={styles.fieldTitle}>개발자</h4>
-              <div className={styles.requirementsList}>
-                <div className={styles.requirementsGroup}>
-                  <div className={styles.requirementsTitle}>필수 요건</div>
-                  <ul>
-                    {developerRequirements.map((req, index) => (
-                      <li key={index}>{req}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div className={styles.requirementsGroup}>
-                  <div className={styles.requirementsTitle}>우대 사항</div>
-                  <ul>
-                    {developerPreferred.map((req, index) => (
-                      <li key={index}>{req}</li>
-                    ))}
-                  </ul>
-                </div>
+            <h4 className={styles.fieldTitle}>개발자</h4>
+            <div className={styles.requirementsList}>
+              <div className={styles.requirementsGroup}>
+                <div className={styles.requirementsTitle}>필수 요건</div>
+                <ul>
+                  {developerRequirements.map((req, index) => (
+                    <li key={index}>{req}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className={styles.requirementsGroup}>
+                <div className={styles.requirementsTitle}>우대 사항</div>
+                <ul>
+                  {developerPreferred.map((req, index) => (
+                    <li key={index}>{req}</li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
         </div>
 
         {/* 지원하기 버튼 */}
-        <div className={styles.buttonWrapper}>
-          <Link href="https://docs.google.com/forms/d/e/1FAIpQLSdlDESVuVbGKyD5_qKnBzhK8FgwcuNAkSsoUgstiv62Qostpg/viewform?usp=dialog" target="_blank" className={styles.applyButton}>
-            <span className={styles.applyButtonText}>지금 지원하기</span>
-            <span className={styles.applyButtonSubtext}>구글 폼으로 이동</span>
+        <div className={styles.applyWrap}>
+          <Link
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdlDESVuVbGKyD5_qKnBzhK8FgwcuNAkSsoUgstiv62Qostpg/viewform?usp=dialog"
+            target="_blank"
+            className={styles.applyButton}
+          >
+            지금 지원하기
           </Link>
+          <span className={styles.applySub}>구글 폼으로 이동</span>
         </div>
       </section>
 

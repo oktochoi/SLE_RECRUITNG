@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Reveal from './Reveal';
 import styles from './Value.module.css';
 
 const cards = [
@@ -10,16 +11,16 @@ const cards = [
 export default function Value() {
   return (
     <section className={styles.section}>
-      <div className={styles.heading}>
+      <Reveal className={styles.heading}>
         <span className={styles.index}>01</span>
         <h2 className={styles.title}>SLEGIZZAGI&rsquo;S VALUES</h2>
-      </div>
+      </Reveal>
 
       <div className={styles.cardGrid}>
-        {cards.map((card) => (
-          <div key={card.alt} className={styles.card}>
+        {cards.map((card, i) => (
+          <Reveal key={card.alt} className={styles.card} delay={i * 100}>
             <Image src={card.src} alt={card.alt} width={300} height={360} className={styles.cardImage} />
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>

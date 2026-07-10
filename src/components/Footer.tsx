@@ -1,10 +1,11 @@
 import Link from 'next/link';
+import Reveal from './Reveal';
 import styles from './Footer.module.css';
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <div className={styles.left}>
+      <Reveal className={styles.left}>
         <div className={styles.mix}>
             <span className={styles.logoText}>SLEGIZZAGI</span>
             <div className={styles.right}>
@@ -16,7 +17,7 @@ export default function Footer() {
         </div>
         <p>okto@handong.ac.kr<br />sledatabase@gmail.com</p>
         <small>Copyright Slegizzagi All rights reserved.</small>
-      </div>
+      </Reveal>
     </footer>
   );
 }

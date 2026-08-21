@@ -138,46 +138,72 @@
   max-width: none;
   margin-left: -6vw;
   margin-right: -6vw;
+  margin-top: 4rem;
   overflow: hidden;
   position: relative;
-  min-height: 260px;
-  display: flex;
-  align-items: center;
+  height: 260px;
 }
 
 .sliderTrack {
   display: flex;
-  align-items: stretch;
-  width: calc(2000px * 2 + 400px * 4);
-  animation: scroll 30s linear infinite;
+  width: max-content;
+  height: 100%;
+  animation: sliderScroll 45s linear infinite;
+  will-change: transform;
+}
+
+.sliderGroup {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  height: 100%;
+  /* study2.svg 내부 간격(~28px @360h → ~20px @260h)과 맞춤 */
+  gap: 20px;
+  /* 그룹 끝에도 동일 간격을 넣어 -50% 루프가 끊기지 않게 함 */
+  padding-right: 20px;
 }
 
 .sliderImage {
   flex-shrink: 0;
   display: block;
-}
-
-.sliderTrack img[src*='.svg'] {
   height: 260px;
   width: auto;
-  display: block;
-  margin: 0;
 }
 
-.sliderTrack img[src*='.jpg'] {
-  width: 400px;
+/* study2.svg: 오른쪽 끝의 잘린 4번째 카드 조각만 잘라냄 (3장 끝 x=1856) */
+.sliderWideClip {
+  flex-shrink: 0;
+  height: 260px;
+  width: calc(1856 / 360 * 260px);
+  overflow: hidden;
+}
+
+.sliderImageWide {
+  width: auto;
+  height: 260px;
+  max-width: none;
+}
+
+.sliderImagePhoto {
+  width: 433px;
   height: 260px;
   object-fit: cover;
-  display: block;
-  margin: 0;
+  border-radius: 12px;
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
+@keyframes sliderScroll {
+  from {
+    transform: translate3d(0, 0, 0);
   }
-  100% {
-    transform: translateX(calc(-2000px - 400px * 2));
+  to {
+    /* 동일 그룹 2개 → 절반만큼 이동하면 끊김 없이 루프 */
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sliderTrack {
+    animation: none;
   }
 }
 

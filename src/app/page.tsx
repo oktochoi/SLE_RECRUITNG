@@ -24,7 +24,7 @@ export default function Page() {
     "@type": "Organization",
     name: "슬기짜기(SLE)",
     url: "https://slegizzagi.vercel.app", // 실제 도메인으로 변경
-    logo: "https://sle.example.com/og.png",
+    logo: "https://slegizzagi.vercel.app/logo-mark.png",
   };
 
   return (

@@ -7,6 +7,52 @@ import Reveal from './Reveal';
 import revealStyles from './Reveal.module.css';
 import { useReveal } from './useReveal';
 
+const slides: { src: string; alt: string; wide?: boolean }[] = [
+  { src: '/study2.svg', alt: '슬기짜기 활동', wide: true },
+  { src: '/meeting.jpg', alt: '정기 모임' },
+  { src: '/study.jpg', alt: '스터디' },
+  { src: '/project.jpg', alt: '프로젝트' },
+];
+
+function SlideImage({
+  src,
+  alt,
+  wide = false,
+  priority = false,
+}: {
+  src: string;
+  alt: string;
+  wide?: boolean;
+  priority?: boolean;
+}) {
+  if (wide) {
+    return (
+      <div className={styles.sliderWideClip}>
+        <Image
+          src={src}
+          alt={alt}
+          width={1892}
+          height={360}
+          className={`${styles.sliderImage} ${styles.sliderImageWide}`}
+          priority={priority}
+          unoptimized
+        />
+      </div>
+    );
+  }
+
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      width={433}
+      height={260}
+      className={`${styles.sliderImage} ${styles.sliderImagePhoto}`}
+      priority={priority}
+    />
+  );
+}
+
 export default function StudySection() {
   const techStack = ['C/C++', 'Java', 'HTML', 'CSS', 'JavaScript', 'Git & 협업 툴', 'Figma'];
   const { ref: moreButtonRef, visible: moreButtonVisible } = useReveal<HTMLAnchorElement>();
@@ -56,86 +102,31 @@ export default function StudySection() {
         </Reveal>
       </div>
 
-      <Reveal className={styles.sliderContainer}>
+      <div className={styles.sliderContainer} aria-hidden="true">
         <div className={styles.sliderTrack}>
-          <Image
-            src="/study2.svg"
-            alt="슬기짜기 활동"
-            width={2000}
-            height={260}
-            className={styles.sliderImage}
-            style={{ width: 'auto', height: 'auto', maxHeight: '260px' }}
-            priority
-            unoptimized
-          />
-          <Image
-            src="/meeting.jpg"
-            alt="정기 모임"
-            width={400}
-            height={300}
-            className={styles.sliderImage}
-          />
-          <Image
-            src="/study.jpg"
-            alt="스터디"
-            width={400}
-            height={300}
-            className={styles.sliderImage}
-          />
-          <Image
-            src="/project.jpg"
-            alt="프로젝트"
-            width={400}
-            height={300}
-            className={styles.sliderImage}
-          />
-          <Image
-            src="/outting.jpg"
-            alt="아웃팅"
-            width={400}
-            height={300}
-            className={styles.sliderImage}
-          />
-          {/* 반복을 위한 복사본 */}
-          <Image
-            src="/study2.svg"
-            alt="슬기짜기 활동"
-            width={2000}
-            height={260}
-            className={styles.sliderImage}
-            style={{ width: 'auto', height: 'auto', maxHeight: '260px' }}
-            unoptimized
-          />
-          <Image
-            src="/meeting.jpg"
-            alt="정기 모임"
-            width={400}
-            height={300}
-            className={styles.sliderImage}
-          />
-          <Image
-            src="/study.jpg"
-            alt="스터디"
-            width={400}
-            height={300}
-            className={styles.sliderImage}
-          />
-          <Image
-            src="/project.jpg"
-            alt="프로젝트"
-            width={400}
-            height={300}
-            className={styles.sliderImage}
-          />
-          <Image
-            src="/outting.jpg"
-            alt="아웃팅"
-            width={400}
-            height={300}
-            className={styles.sliderImage}
-          />
+          <div className={styles.sliderGroup}>
+            {slides.map((slide) => (
+              <SlideImage
+                key={`a-${slide.src}`}
+                src={slide.src}
+                alt={slide.alt}
+                wide={slide.wide}
+                priority={Boolean(slide.wide)}
+              />
+            ))}
+          </div>
+          <div className={styles.sliderGroup}>
+            {slides.map((slide) => (
+              <SlideImage
+                key={`b-${slide.src}`}
+                src={slide.src}
+                alt={slide.alt}
+                wide={slide.wide}
+              />
+            ))}
+          </div>
         </div>
-      </Reveal>
+      </div>
 
       <Link
         ref={moreButtonRef}

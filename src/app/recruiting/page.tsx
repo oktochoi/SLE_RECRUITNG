@@ -34,7 +34,7 @@ export default function RecruitingPage() {
       title: "대면 면접"
     },
     {
-      date: "09/13(일)",
+      date: "09/14(월)",
       title: "최종 합격 결과 발표"
     }
   ];

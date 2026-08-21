@@ -77,7 +77,7 @@ export default function RecruitingPage() {
         </div>
 
         <Link
-          href="https://docs.google.com/forms/d/e/1FAIpQLSdlDESVuVbGKyD5_qKnBzhK8FgwcuNAkSsoUgstiv62Qostpg/viewform?usp=dialog"
+          href="https://forms.gle/3SZQCQ5ymR36RH2u8"
           target="_blank"
           className={styles.heroApply}
         >
@@ -140,7 +140,7 @@ export default function RecruitingPage() {
         {/* 지원하기 버튼 */}
         <div className={styles.applyWrap}>
           <Link
-            href="https://docs.google.com/forms/d/e/1FAIpQLSdlDESVuVbGKyD5_qKnBzhK8FgwcuNAkSsoUgstiv62Qostpg/viewform?usp=dialog"
+            href="https://forms.gle/3SZQCQ5ymR36RH2u8"
             target="_blank"
             className={styles.applyButton}
           >

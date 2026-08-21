@@ -15,14 +15,22 @@ export default function Projects() {
     <section className={styles.section}>
       <Reveal className={styles.heading}>
         <span className={styles.index}>04</span>
-        <h2 className={styles.title}>SLEGIZZAGI&rsquo;S PROJECTS</h2>
+        <h2 className={styles.title}>
+          SLEGIZZAGI&rsquo;S
+          <br className="brMobile" />
+          {' '}PROJECTS
+        </h2>
       </Reveal>
 
       <Reveal delay={80}>
         <p className={styles.headerDescription}>
-          방학 프로젝트를 통해 실전 경험을 쌓고 포트폴리오를 만듭니다.
+          방학 프로젝트를 통해
+          <br className="brMobile" />
+          실전 경험을 쌓고 포트폴리오를 만듭니다.
           <br />
-          각 개인이 직접 팀을 구성하고 팀원을 모집하여, 자신이 작성한 기획서를 바탕으로 방학 동안 프로젝트를 진행합니다.
+          각 개인이 직접 팀을 구성하고 팀원을 모집하여,
+          <br className="brMobile" />
+          기획서를 바탕으로 방학 동안 프로젝트를 진행합니다.
         </p>
       </Reveal>
 

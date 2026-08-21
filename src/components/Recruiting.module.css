@@ -63,7 +63,16 @@
 @media screen and (max-width: 768px) {
   .container {
     min-height: 50vh;
-    padding: 6rem 6vw;
+    padding: 5rem 5vw;
+    width: 100%;
   }
 
+  .applyLine {
+    font-size: clamp(2.4rem, 12vw, 3.6rem);
+  }
+
+  .sub {
+    font-size: 11px;
+    padding: 0 8px;
+  }
 }

@@ -61,7 +61,11 @@ export default function StudySection() {
     <section className={styles.section}>
       <Reveal className={styles.heading}>
         <span className={styles.index}>03</span>
-        <h2 className={styles.title}>SLEGIZZAGI&rsquo;S STUDY</h2>
+        <h2 className={styles.title}>
+          SLEGIZZAGI&rsquo;S
+          <br className="brMobile" />
+          {' '}STUDY
+        </h2>
       </Reveal>
 
       <div className={styles.studyGrid}>
@@ -69,23 +73,37 @@ export default function StudySection() {
           <Reveal className={styles.studyCard}>
             <h3 className={styles.cardTitle}>슬기짜기 스터디</h3>
             <p className={styles.cardText}>
-              슬기짜기에서는 학년별 필수 스터디, 직군별 필수 스터디를 진행합니다.
+              슬기짜기에서는 학년별 필수 스터디,
+              <br className="brMobile" />
+              직군별 필수 스터디를 진행합니다.
             </p>
             <p className={styles.cardText}>
-              개인이 주도하는 개별 자율 스터디, 수준별·관심사별로 활동하는 스터디 등 다양한 스터디를 운영 중입니다.
+              개인이 주도하는 개별 자율 스터디,
+              <br className="brMobile" />
+              수준별·관심사별 스터디 등
+              <br className="brMobile" />
+              다양한 스터디를 운영 중입니다.
             </p>
             <p className={styles.cardText}>
-              누구나 원하는 주제를 제안하고, 함께 학습하며 실력을 키울 수 있습니다.
+              누구나 원하는 주제를 제안하고,
+              <br className="brMobile" />
+              함께 학습하며 실력을 키울 수 있습니다.
             </p>
           </Reveal>
 
           <Reveal className={styles.studyCard} delay={100}>
             <h3 className={styles.cardTitle}>슬년회</h3>
             <p className={styles.cardText}>
-              방학 프로젝트의 마지막 주 마지막 날에는 슬년회가 열립니다.
+              방학 프로젝트의 마지막 주 마지막 날에는
+              <br className="brMobile" />
+              슬년회가 열립니다.
             </p>
             <p className={styles.cardText}>
-              완성된 프로젝트를 발표하고, 슬기짜기 OB 선배님들과 만나 피드백을 받고 경험을 나누는 소중한 자리입니다.
+              완성된 프로젝트를 발표하고,
+              <br className="brMobile" />
+              슬기짜기 OB 선배님들과 만나
+              <br className="brMobile" />
+              피드백을 받고 경험을 나누는 자리입니다.
             </p>
           </Reveal>
         </div>

@@ -13,7 +13,11 @@ export default function Value() {
     <section className={styles.section}>
       <Reveal className={styles.heading}>
         <span className={styles.index}>01</span>
-        <h2 className={styles.title}>SLEGIZZAGI&rsquo;S VALUES</h2>
+        <h2 className={styles.title}>
+          SLEGIZZAGI&rsquo;S
+          <br className="brMobile" />
+          {' '}VALUES
+        </h2>
       </Reveal>
 
       <div className={styles.cardGrid}>

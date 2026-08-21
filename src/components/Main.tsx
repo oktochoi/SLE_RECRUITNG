@@ -40,9 +40,13 @@ export default function Main() {
         </h1>
 
         <p className={styles.description}>
-          컴퓨터의 순우리말인 &lsquo;슬기셈틀&rsquo;과 &lsquo;짜다&rsquo;를 합쳐 만든 이름으로
+          컴퓨터의 순우리말인 &lsquo;슬기셈틀&rsquo;과
+          <br className="brMobile" />
+          &lsquo;짜다&rsquo;를 합쳐 만든 이름으로
           <br />
-          컴퓨터를 이용해 할 수 있는 모든 것을 지향하는 동아리
+          컴퓨터를 이용해 할 수 있는
+          <br className="brMobile" />
+          모든 것을 지향하는 동아리
         </p>
       </div>
     </section>

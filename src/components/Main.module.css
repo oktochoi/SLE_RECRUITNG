@@ -240,7 +240,12 @@
 @media screen and (max-width: 768px) {
   .wrapper {
     min-height: auto;
-    padding: 8rem 6vw 3rem;
+    padding: 7.5rem 5vw 3rem;
+  }
+
+  .content {
+    width: 100%;
+    max-width: 100%;
   }
 
   .sideThread {
@@ -254,18 +259,20 @@
   }
 
   .wordmark {
-    font-size: clamp(2.2rem, 12vw, 3.6rem);
+    font-size: clamp(2.4rem, 11vw, 3.4rem);
   }
 
   .mark {
-    width: 40px;
-    height: 26px;
-    top: -18%;
-    right: 0;
+    width: 36px;
+    height: 24px;
+    top: -16%;
+    right: -2%;
   }
 
   .description {
-    font-size: 13px;
-    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.75;
+    max-width: 20em;
+    margin-top: 24px;
   }
 }

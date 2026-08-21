@@ -12,9 +12,13 @@ export default function About() {
       </Reveal>
       <Reveal delay={160}>
         <p className={styles.description}>
-          문제를 해결하는 데 있어 지혜롭고 효율적인 접근을 추구합니다.
+          문제를 해결하는 데 있어
+          <br className="brMobile" />
+          지혜롭고 효율적인 접근을 추구합니다.
           <br />
-          함께 성장하고 함께 배우는 커뮤니티입니다.
+          함께 성장하고 함께 배우는
+          <br className="brMobile" />
+          커뮤니티입니다.
         </p>
       </Reveal>
     </section>

@@ -7,7 +7,7 @@ const Effect: React.FC = () => {
       <div className={styles.ticker}>
         {Array.from({ length: 20 }).map((_, i) => (
           <span key={i}>
-            RECRUITING <em>02/23(월) ~ 03/11(수)</em>
+            RECRUITING <em>08/21(금) ~ 09/09(수)</em>
           </span>
         ))}
       </div>

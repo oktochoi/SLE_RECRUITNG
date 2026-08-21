@@ -39,21 +39,6 @@
   font-size: 13px;
 }
 
-@media screen and (max-width: 1024px) {
-  .navbar {
-    gap: 20px;
-  }
-}
-
-@media screen and (max-width: 640px) {
-  .navbar {
-    gap: 12px;
-  }
-  .header {
-    padding: 0 5vw;
-  }
-}
-
 .menuItem {
   position: relative;
   cursor: pointer;
@@ -72,4 +57,51 @@
 
 .menuItem:hover .menuText {
   opacity: 1;
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar {
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .header {
+    padding: 0 4vw;
+    gap: 12px;
+  }
+
+  .logoContainer {
+    flex-shrink: 0;
+  }
+
+  .logoText {
+    font-size: 13px;
+  }
+
+  .navbar {
+    gap: 10px;
+    min-width: 0;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+  }
+
+  .menuText {
+    font-size: 10px;
+    letter-spacing: 0.02em;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .header {
+    padding: 0 3vw;
+  }
+
+  .navbar {
+    gap: 6px;
+  }
+
+  .menuText {
+    font-size: 9px;
+  }
 }

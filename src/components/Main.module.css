@@ -93,7 +93,7 @@
 .mark {
   position: absolute;
   top: -14%;
-  right: -9%;
+  right: -4%;
   width: clamp(56px, 9vw, 92px);
   height: clamp(36px, 6vw, 60px);
   overflow: visible;
@@ -248,8 +248,8 @@
   }
 
   .glow {
-    width: 130vw;
-    height: 130vw;
+    width: min(90vw, 420px);
+    height: min(90vw, 420px);
     top: 0;
   }
 
@@ -260,8 +260,8 @@
   .mark {
     width: 40px;
     height: 26px;
-    top: -20%;
-    right: -12%;
+    top: -18%;
+    right: 0;
   }
 
   .description {

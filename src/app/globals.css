@@ -30,6 +30,8 @@
 html {
   background: var(--background);
   scroll-behavior: smooth;
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 body {
@@ -39,7 +41,8 @@ body {
     linear-gradient(180deg, #111110 0%, #0d0d0c 40%, #0a0a09 100%) !important;
   color: var(--foreground) !important;
   font-family: var(--font-body);
-  overflow-x: hidden;
+  overflow-x: clip;
+  max-width: 100%;
   position: relative;
 }
 

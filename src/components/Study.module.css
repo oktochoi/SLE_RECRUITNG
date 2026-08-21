@@ -4,6 +4,7 @@
   padding: 8rem 6vw;
   background-color: var(--background);
   color: var(--foreground);
+  overflow-x: clip;
 }
 
 .heading {
@@ -113,7 +114,8 @@
 }
 
 .moreButton {
-  align-self: center;
+  display: block;
+  margin: 4rem auto 0;
   color: var(--foreground);
   text-decoration: none;
   font-size: 15px;
@@ -131,8 +133,11 @@
 }
 
 .sliderContainer {
-  width: 100vw;
-  margin-left: calc(-6vw);
+  /* 섹션 좌우 padding(6vw)을 상쇄해 뷰포트 전체 너비로 맞춤 — 100vw 사용 금지 */
+  width: calc(100% + 12vw);
+  max-width: none;
+  margin-left: -6vw;
+  margin-right: -6vw;
   overflow: hidden;
   position: relative;
   min-height: 260px;
@@ -209,9 +214,5 @@
 
   .cardText {
     font-size: 14px;
-  }
-
-  .sliderContainer {
-    margin-left: calc(-5vw);
   }
 }

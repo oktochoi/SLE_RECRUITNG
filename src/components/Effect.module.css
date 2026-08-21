@@ -2,7 +2,9 @@
   position: relative;
   z-index: 3;
   width: 100%;
+  max-width: 100%;
   overflow: hidden;
+  overflow-x: clip;
   background-color: transparent;
   color: var(--foreground);
   white-space: nowrap;

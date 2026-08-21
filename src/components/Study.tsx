@@ -54,96 +54,96 @@ export default function StudySection() {
             ))}
           </div>
         </Reveal>
-
-        <Reveal className={styles.sliderContainer}>
-          <div className={styles.sliderTrack}>
-            <Image
-              src="/study2.svg"
-              alt="슬기짜기 활동"
-              width={2000}
-              height={260}
-              className={styles.sliderImage}
-              style={{ width: 'auto', height: 'auto', maxHeight: '260px' }}
-              priority
-              unoptimized
-            />
-            <Image
-              src="/meeting.jpg"
-              alt="정기 모임"
-              width={400}
-              height={300}
-              className={styles.sliderImage}
-            />
-            <Image
-              src="/study.jpg"
-              alt="스터디"
-              width={400}
-              height={300}
-              className={styles.sliderImage}
-            />
-            <Image
-              src="/project.jpg"
-              alt="프로젝트"
-              width={400}
-              height={300}
-              className={styles.sliderImage}
-            />
-            <Image
-              src="/outting.jpg"
-              alt="아웃팅"
-              width={400}
-              height={300}
-              className={styles.sliderImage}
-            />
-            {/* 반복을 위한 복사본 */}
-            <Image
-              src="/study2.svg"
-              alt="슬기짜기 활동"
-              width={2000}
-              height={260}
-              className={styles.sliderImage}
-              style={{ width: 'auto', height: 'auto', maxHeight: '260px' }}
-              unoptimized
-            />
-            <Image
-              src="/meeting.jpg"
-              alt="정기 모임"
-              width={400}
-              height={300}
-              className={styles.sliderImage}
-            />
-            <Image
-              src="/study.jpg"
-              alt="스터디"
-              width={400}
-              height={300}
-              className={styles.sliderImage}
-            />
-            <Image
-              src="/project.jpg"
-              alt="프로젝트"
-              width={400}
-              height={300}
-              className={styles.sliderImage}
-            />
-            <Image
-              src="/outting.jpg"
-              alt="아웃팅"
-              width={400}
-              height={300}
-              className={styles.sliderImage}
-            />
-          </div>
-        </Reveal>
-
-        <Link
-          ref={moreButtonRef}
-          href="/about"
-          className={`${styles.moreButton} ${revealStyles.reveal} ${moreButtonVisible ? revealStyles.visible : ''}`}
-        >
-          동아리 소개 자세히보기 →
-        </Link>
       </div>
+
+      <Reveal className={styles.sliderContainer}>
+        <div className={styles.sliderTrack}>
+          <Image
+            src="/study2.svg"
+            alt="슬기짜기 활동"
+            width={2000}
+            height={260}
+            className={styles.sliderImage}
+            style={{ width: 'auto', height: 'auto', maxHeight: '260px' }}
+            priority
+            unoptimized
+          />
+          <Image
+            src="/meeting.jpg"
+            alt="정기 모임"
+            width={400}
+            height={300}
+            className={styles.sliderImage}
+          />
+          <Image
+            src="/study.jpg"
+            alt="스터디"
+            width={400}
+            height={300}
+            className={styles.sliderImage}
+          />
+          <Image
+            src="/project.jpg"
+            alt="프로젝트"
+            width={400}
+            height={300}
+            className={styles.sliderImage}
+          />
+          <Image
+            src="/outting.jpg"
+            alt="아웃팅"
+            width={400}
+            height={300}
+            className={styles.sliderImage}
+          />
+          {/* 반복을 위한 복사본 */}
+          <Image
+            src="/study2.svg"
+            alt="슬기짜기 활동"
+            width={2000}
+            height={260}
+            className={styles.sliderImage}
+            style={{ width: 'auto', height: 'auto', maxHeight: '260px' }}
+            unoptimized
+          />
+          <Image
+            src="/meeting.jpg"
+            alt="정기 모임"
+            width={400}
+            height={300}
+            className={styles.sliderImage}
+          />
+          <Image
+            src="/study.jpg"
+            alt="스터디"
+            width={400}
+            height={300}
+            className={styles.sliderImage}
+          />
+          <Image
+            src="/project.jpg"
+            alt="프로젝트"
+            width={400}
+            height={300}
+            className={styles.sliderImage}
+          />
+          <Image
+            src="/outting.jpg"
+            alt="아웃팅"
+            width={400}
+            height={300}
+            className={styles.sliderImage}
+          />
+        </div>
+      </Reveal>
+
+      <Link
+        ref={moreButtonRef}
+        href="/about"
+        className={`${styles.moreButton} ${revealStyles.reveal} ${moreButtonVisible ? revealStyles.visible : ''}`}
+      >
+        동아리 소개 자세히보기 →
+      </Link>
     </section>
   );
 }
